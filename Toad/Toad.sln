@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SAMP-IAMX", "SAMP-IAMX\SAMP-IAMX.vcxproj", "{8BA06AA5-F3B1-42E3-BC73-0234E37EB2A6}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TEST", "TEST\TEST.vcxproj", "{D7B8E702-2362-4D9E-8710-E8B4BD5CD483}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BA06AA5-F3B1-42E3-BC73-0234E37EB2A6}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8BA06AA5-F3B1-42E3-BC73-0234E37EB2A6}.Debug|Win32.Build.0 = Debug|Win32
+		{8BA06AA5-F3B1-42E3-BC73-0234E37EB2A6}.Release|Win32.ActiveCfg = Release|Win32
+		{8BA06AA5-F3B1-42E3-BC73-0234E37EB2A6}.Release|Win32.Build.0 = Release|Win32
+		{D7B8E702-2362-4D9E-8710-E8B4BD5CD483}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D7B8E702-2362-4D9E-8710-E8B4BD5CD483}.Debug|Win32.Build.0 = Debug|Win32
+		{D7B8E702-2362-4D9E-8710-E8B4BD5CD483}.Release|Win32.ActiveCfg = Release|Win32
+		{D7B8E702-2362-4D9E-8710-E8B4BD5CD483}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
