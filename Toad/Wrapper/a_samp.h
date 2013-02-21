@@ -1,8 +1,9 @@
+#pragma once
 /*  SA-MP Functions
- *
- *  (c) Copyright 2005-2012, SA-MP Team
- *
- */
+*
+*  (c) Copyright 2005-2012, SA-MP Team
+*
+*/
 
 //#include <core>
 //#include <float>
@@ -10,9 +11,9 @@
 //#include <file>
 //#include <time>
 //#include <datagram>
-//#include <a_players>
+#include "a_players.h"
 //#include <a_vehicles>
-//#include <a_objects>
+#include "a_objects.h"
 //#include <a_sampdb>
 
 // Limits and internal constants
@@ -330,7 +331,7 @@ int OnPlayerTakeDamage(int playerid, int issuerid, float amount, int weaponid);
 int OnPlayerGiveDamage(int playerid, int damagedid, float amount, int weaponid);
 int OnPlayerClickMap(int playerid, float fX, float fY, float fZ);
 int OnPlayerClickTextDraw(int playerid, Text clickedid);
-//--int OnPlayerClickPlayerTextDraw(int playerid, PlayerText:playertextid);
+int OnPlayerClickPlayerTextDraw(int playerid, PlayerText playertextid);
 
 #define CLICK_SOURCE_SCOREBOARD		0
 int OnPlayerClickPlayer(int playerid, int clickedplayerid, int source);
@@ -340,12 +341,12 @@ int OnPlayerClickPlayer(int playerid, int clickedplayerid, int source);
 #define EDIT_RESPONSE_UPDATE		2
 
 int OnPlayerEditObject(int playerid, int playerobject, int objectid, int response, 
-float fX, float fY, float fZ, float fRotX, float fRotY, float fRotZ );
+					   float fX, float fY, float fZ, float fRotX, float fRotY, float fRotZ );
 
 int OnPlayerEditAttachedObject(int playerid, int response, int index, int modelid, int boneid,
-float fOffsetX, float fOffsetY, float fOffsetZ,
-float fRotX, float fRotY, float fRotZ,
-float fScaleX, float fScaleY, float fScaleZ);
+							   float fOffsetX, float fOffsetY, float fOffsetZ,
+							   float fRotX, float fRotY, float fRotZ,
+							   float fScaleX, float fScaleY, float fScaleZ);
 
 #define SELECT_OBJECT_GLOBAL_OBJECT	1
 #define SELECT_OBJECT_PLAYER_OBJECT 2
