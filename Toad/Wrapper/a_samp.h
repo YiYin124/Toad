@@ -5,16 +5,10 @@
 *
 */
 
-//#include <core>
-//#include <float>
-//#include <string>
-//#include <file>
-//#include <time>
-//#include <datagram>
 #include "a_players.h"
-//#include <a_vehicles>
+#include "a_vehicles.h"
 #include "a_objects.h"
-//#include <a_sampdb>
+#include "a_sampdb.h"
 
 // Limits and internal constants
 #define MAX_PLAYER_NAME							(24)
@@ -42,7 +36,7 @@
 // --------------------------------------------------
 
 // Util
-//native print(const string[]);
+int print(const char string[]);
 //native printf(const format[], {Float,_}:...);
 //native format(output[], len, const format[], {Float,_}:...);
 int SendClientMessage(int playerid, int color, const char message[]);
