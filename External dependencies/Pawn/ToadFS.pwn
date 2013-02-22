@@ -1,16 +1,7 @@
 #include <a_samp>
-
-public OnFilterScriptInit()
-{
-	print("");
-}
-
-public OnRconCommand(cmd[])
-{
-	if (strcmp(cmd, "test", true) == 0)
-	{
-	    print("[Pawn] This RCON test CMD!");
-	    return 1;
-	}
-	return 0;
-}
+native FS_OnFilterScriptInit();
+native FS_OnFilterScriptExit();
+native FS_OnRconCommand(cmd[]);
+public OnFilterScriptInit() return FS_OnFilterScriptInit();
+public OnFilterScriptExit() return FS_OnFilterScriptExit();
+public OnRconCommand(cmd[]) return FS_OnRconCommand(cmd);
