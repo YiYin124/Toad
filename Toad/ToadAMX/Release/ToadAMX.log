@@ -1,5 +1,15 @@
-﻿生成启动时间为 2013/2/22 8:28:54。
+﻿生成启动时间为 2013/2/22 9:06:20。
+     1>项目“C:\Users\XQY\documents\visual studio 2012\Projects\Toad\ToadAMX\ToadAMX.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt amxEx.c amxplugin.c
+         amxEx.c
+         amxplugin.c
+       Lib:
+         D:\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\XQY\documents\visual studio 2012\Projects\Toad\Release\ToadAMX.lib" /NOLOGO /LTCG Release\amxEx.obj
+         Release\amxplugin.obj
+         ToadAMX.vcxproj -> C:\Users\XQY\documents\visual studio 2012\Projects\Toad\Release\ToadAMX.lib
+     1>已完成生成项目“C:\Users\XQY\documents\visual studio 2012\Projects\Toad\ToadAMX\ToadAMX.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.10
+已用时间 00:00:00.95

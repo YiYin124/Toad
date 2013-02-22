@@ -36,8 +36,8 @@
 // --------------------------------------------------
 
 // Util
-int print(const char string[]);
-void (*printf)(char* format, ...);
+int println(const char string[]);
+
 //native format(output[], len, const format[], {Float,_}:...);
 int SendClientMessage(int playerid, int color, const char message[]);
 int SendClientMessageToAll(int color, const char message[]);

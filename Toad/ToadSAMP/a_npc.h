@@ -7,14 +7,15 @@
 
 #include "toad_callbacks.h"
 #include "toad_functions.h"
-
+#include "../ToadAMX/toadAMX.h"
+extern AMX *gAMX;
 // --------------------------------------------------
 // Natives
 // --------------------------------------------------
 
 // Util
-int print(const char string[]);
-void (*printf)(char* format, ...);
+int println(const char string[]);
+
 //native format(output[], len, const format[], {Float,_}:...);
 //native SetTimer(funcname[], interval, repeating);
 //native KillTimer(timerid);
@@ -28,7 +29,7 @@ int SendChat(char msg[]);
 int SendCommand(char commandtext[]);
 
 int GetPlayerState(int playerid);
-int GetPlayerPos(int, float *x, float *y, float *z);
+int GetPlayerPos(int playerid, float *x, float *y, float *z);
 int GetPlayerVehicleID(int playerid);
 int GetPlayerArmedWeapon(int playerid);
 float GetPlayerHealth(int playerid);

@@ -2,13 +2,13 @@
 
 void OnLoadPlugin()
 {
-	printf("[TEST] OnLoadPlugin");
+	printfln("[TEST] OnLoadPlugin");
 }
 
 
 void OnUnloadPlugin()
 {
-	printf("[TEST] OnUnloadPlugin");
+	printfln("[TEST] OnUnloadPlugin");
 }
 
 
@@ -19,6 +19,7 @@ void OnProcessTick()
 
 int OnGameModeInit()
 {
-	print("[TEST]OnGameModeInit");
+	println("[TEST]OnGameModeInit");
+	//DisableInteriorEnterExits();
 	return 1;
 }

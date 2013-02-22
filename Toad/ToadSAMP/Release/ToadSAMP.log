@@ -1,5 +1,29 @@
-﻿生成启动时间为 2013/2/22 8:28:54。
+﻿生成启动时间为 2013/2/22 9:06:21。
+     1>项目“C:\Users\XQY\documents\visual studio 2012\Projects\Toad\ToadSAMP\ToadSAMP.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt ToadCallbacks.c ToadCore.c ToadFunctions.c
+         ToadCallbacks.c
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(56): warning C4391: “float asin(float)”: 不正确的内部函数返回类型，应为“double”
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(57): warning C4391: “float acos(float)”: 不正确的内部函数返回类型，应为“double”
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(58): warning C4391: “float atan(float)”: 不正确的内部函数返回类型，应为“double”
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(59): warning C4391: “float atan2(float,float)”: 不正确的内部函数返回类型，应为“double”
+         ToadCore.c
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(56): warning C4391: “float asin(float)”: 不正确的内部函数返回类型，应为“double”
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(57): warning C4391: “float acos(float)”: 不正确的内部函数返回类型，应为“double”
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(58): warning C4391: “float atan(float)”: 不正确的内部函数返回类型，应为“double”
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(59): warning C4391: “float atan2(float,float)”: 不正确的内部函数返回类型，应为“double”
+         ToadFunctions.c
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(56): warning C4391: “float asin(float)”: 不正确的内部函数返回类型，应为“double”
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(57): warning C4391: “float acos(float)”: 不正确的内部函数返回类型，应为“double”
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(58): warning C4391: “float atan(float)”: 不正确的内部函数返回类型，应为“double”
+     1>c:\users\xqy\documents\visual studio 2012\projects\toad\toadsamp\a_samp.h(59): warning C4391: “float atan2(float,float)”: 不正确的内部函数返回类型，应为“double”
+       Lib:
+         D:\Microsoft Visual Studio 11.0\VC\bin\Lib.exe /OUT:"C:\Users\XQY\documents\visual studio 2012\Projects\Toad\Release\ToadSAMP.lib" /NOLOGO /LTCG Release\ToadCallbacks.obj
+         Release\ToadCore.obj
+         Release\ToadFunctions.obj
+         ToadSAMP.vcxproj -> C:\Users\XQY\documents\visual studio 2012\Projects\Toad\Release\ToadSAMP.lib
+     1>已完成生成项目“C:\Users\XQY\documents\visual studio 2012\Projects\Toad\ToadSAMP\ToadSAMP.vcxproj”(Build 个目标)的操作。
 
 生成成功。
 
-已用时间 00:00:00.02
+已用时间 00:00:00.61

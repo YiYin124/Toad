@@ -1,5 +1,15 @@
 #include "toadAMX.h"
 
+char* _amx_GetString(AMX *amx, const cell str, char *dest, int size)//BY MK 124
+{
+	cell *phys;
+
+	amx_GetAddr(amx, str, &phys);
+	amx_GetString(dest, phys, 0, size);
+
+	return dest;
+}
+
 cell amx_CallNativeFunc(AMX *amx, const char * funcName, const char * typeList, ...)
 {
 	va_list vaList;

@@ -1,6 +1,11 @@
 #include "toadSAMP.h"
 
-int print(const char string[])
+int println(const char string[])
 {
-	return amx_CallNativeFunc(gAMX, __FUNCTION__, "s", string);
+	return amx_CallNativeFunc(gAMX, "print", "s", string);
+}
+
+int DisableInteriorEnterExits()
+{
+	return amx_CallNativeFunc(gAMX, __FUNCTION__, "");
 }
