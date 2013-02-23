@@ -1,8 +1,11 @@
 #include "../ToadSAMP/toadSAMP.h"
 
+
 int OnLoadPlugin()
 {
 	printfln("[TEST] OnLoadPlugin");
+//	_sleep(5000);
+//	printfln("[TEST] OnLoadPlugin OK");
 	return 1;
 }
 
@@ -20,31 +23,31 @@ void OnProcessTick()
 
 int OnGameModeInit()
 {
-	//printfln("[DEBUG] OnGameModeInit");
+	printfln("[DEBUG] OnGameModeInit");
 	return 1;
 }
 
 int OnGameModeExit()
 {
-	//printfln("[DEBUG] OnGameModeExit");
+	printfln("[DEBUG] OnGameModeExit");
 	return 1;
 }
 
 int OnFilterScriptInit()
 {
-	//printfln("[DEBUG] OnFilterScriptInit");
+	printfln("[DEBUG] OnFilterScriptInit");
 	return 1;
 }
 
 int OnFilterScriptExit()
 {
-	//printfln("[DEBUG] OnFilterScriptExit");
+	printfln("[DEBUG] OnFilterScriptExit");
 	return 1;
 }
 
 int OnPlayerConnect(int playerid)
 {
-	//printfln("[DEBUG] OnPlayerConnect playerid[%d]", playerid);
+	printfln("[DEBUG] OnPlayerConnect playerid[%d]", playerid);
 	return 1;
 }
 

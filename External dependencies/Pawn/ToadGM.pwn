@@ -103,10 +103,12 @@ GM_OnPlayerEditObject( playerid, playerobject, objectid, response, Float:fX, Flo
 public OnPlayerEditAttachedObject( playerid, response, index, modelid, boneid, Float:fOffsetX, Float:fOffsetY, Float:fOffsetZ, Float:fRotX, Float:fRotY, Float:fRotZ, Float:fScaleX, Float:fScaleY, Float:fScaleZ ) return \
 GM_OnPlayerEditAttachedObject( playerid, response, index, modelid, boneid, Float:fOffsetX, Float:fOffsetY, Float:fOffsetZ, Float:fRotX, Float:fRotY, Float:fRotZ, Float:fScaleX, Float:fScaleY, Float:fScaleZ );
 public OnPlayerSelectObject(playerid, type, objectid, modelid, Float:fX, Float:fY, Float:fZ) return GM_OnPlayerSelectObject(playerid, type, objectid, modelid, Float:fX, Float:fY, Float:fZ);
-main()
+
+forward OnRegisterFunctions();
+public OnRegisterFunctions()
 {
 new ival, Float:fval;
-
+//new str[2];
 print("[ToadGM register to function]");
 printf("");
 format("", 0, "");
@@ -122,13 +124,13 @@ SetTimerEx("", 0, 0, "");
 KillTimer(0);
 GetTickCount();
 GetMaxPlayers();
+print("[1 end]");
 CallRemoteFunction("", "");
 CallLocalFunction("", "");
 asin(0.0);
 acos(0.0);
 atan(0.0);
 atan2(0.0, 0.0);
-
 // Game
 SetGameModeText("");
 SetTeamCount(0);
@@ -159,17 +161,15 @@ SetNameTagDrawDistance(0.0); // Distance at which nametags will start rendering 
 DisableNameTagLOS(); // Disables the nametag Line-Of-Sight checking
 LimitGlobalChatRadius(0.0);
 LimitPlayerMarkerRadius(0.0);
-
 // Npc
 ConnectNPC("", "");
 IsPlayerNPC(0);
-
 // Admin
 IsPlayerAdmin(0);
 Kick(0);
 Ban(0);
 BanEx(0, "");
-SendRconCommand("");
+//SendRconCommand("");
 GetServerVarAsString("", "", 0);
 GetServerVarAsInt("");
 GetServerVarAsBool("");
@@ -188,7 +188,6 @@ IsValidMenu(Menu:0);
 DisableMenu(Menu:0);
 DisableMenuRow(Menu:0, 0);
 GetPlayerMenu(0);
-
 TextDrawCreate(0.0, 0.0, "");
 TextDrawDestroy(Text:0);
 TextDrawLetterSize(Text:0, 0.0, 0.0);
@@ -508,4 +507,9 @@ db_num_fields(DBResult:0);
 db_field_name(DBResult:0, 0, "", 0);
 db_get_field(DBResult:0, 0, "", 0);
 db_get_field_assoc(DBResult:0, "", "", 0);
+
+//[Toad Other]
+SendRconCommand("loadfs ToadFS");
 }
+
+main() {}
