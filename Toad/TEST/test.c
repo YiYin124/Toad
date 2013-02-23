@@ -1,8 +1,22 @@
+/**
+* Copyright (C) 2013 YiYin
+* This library is free software; you can redistribute it and/or
+* modify it under the terms of the GNU Lesser General Public
+* version 3.0 of the License as published by the Free Software Foundation.
+*
+* This library is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* Lesser General Public License for more details.
+*/
+
 #include <stdio.h> // 要用C库支援
 #include <string.h> // 应该在这里
 #include "../ToadSAMP/a_samp.h"
 
 //这个是一个Gamwmode
+//int OnGameModeInit();
+//extern _OnGameModeInit pOnGameModeInit = OnGameModeInit;
 
 int OnLoadPlugin()
 {

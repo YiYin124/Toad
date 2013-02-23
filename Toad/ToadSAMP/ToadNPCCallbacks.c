@@ -1,3 +1,15 @@
+/**
+* Copyright (C) 2013 YiYin
+* This library is free software; you can redistribute it and/or
+* modify it under the terms of the GNU Lesser General Public
+* version 3.0 of the License as published by the Free Software Foundation.
+*
+* This library is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* Lesser General Public License for more details.
+*/
+
 #include "a_npc.h"
 #include "toadSAMP.h"
 
@@ -81,3 +93,23 @@ static cell AMX_NATIVE_CALL NPC_OnRecordingPlaybackEnd(AMX *amx, const cell *par
 {
 	return OnRecordingPlaybackEnd();
 }
+
+AMX_NATIVE_INFO NPCCallBack[] = 
+{
+	{"NPC_OnNPCModeInit",						NPC_OnNPCModeInit			},
+	{"NPC_OnNPCModeExit",						NPC_OnNPCModeExit			},
+	{"NPC_OnNPCConnect",						NPC_OnNPCConnect			},
+	{"NPC_OnNPCDisconnect",						NPC_OnNPCDisconnect			},
+	{"NPC_OnNPCSpawn",							NPC_OnNPCSpawn				},
+	{"NPC_OnNPCEnterVehicle",					NPC_OnNPCEnterVehicle		},
+	{"NPC_OnNPCExitVehicle",					NPC_OnNPCExitVehicle		},
+	{"NPC_OnClientMessage",						NPC_OnClientMessage			},
+	{"NPC_OnPlayerDeath",						NPC_OnPlayerDeath			},
+	{"NPC_OnPlayerText",						NPC_OnPlayerText			},
+	{"NPC_OnPlayerStreamIn",					NPC_OnPlayerStreamIn		},
+	{"NPC_OnPlayerStreamOut",					NPC_OnPlayerStreamOut		},
+	{"NPC_OnVehicleStreamIn",					NPC_OnVehicleStreamIn		},
+	{"NPC_OnVehicleStreamOut",					NPC_OnVehicleStreamOut		},
+	{"NPC_OnRecordingPlaybackEnd",				NPC_OnRecordingPlaybackEnd	},
+	{NULL,										NULL						},
+};
