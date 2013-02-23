@@ -1,10 +1,6 @@
 #include <stdio.h>
 #include "a_npc.h"
 
-int print(const char string[])
-{
-	return amx_CallNativeFunc(gAMX, __FUNCTION__, "s", string);
-}
 //native format(output[], len, const format[], {Float,_}:...);
 //native SetTimer(funcname[], interval, repeating);
 //native KillTimer(timerid);

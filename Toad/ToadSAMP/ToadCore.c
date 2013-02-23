@@ -11,15 +11,11 @@ PLUGIN_EXPORT int PLUGIN_CALL Load(void **ppData)
 {
 	pAMXFunctions = ppData[PLUGIN_DATA_AMX_EXPORTS];
 	printfln = (void (*)(char*, ...))ppData[PLUGIN_DATA_LOGPRINTF];
-
-	printfln(" * Toad plugin was loaded.");
-	OnLoadPlugin();
-	return 1;
+	return OnLoadPlugin();
 }
 
 PLUGIN_EXPORT void PLUGIN_CALL Unload()
 {
-	printfln(" * Toad plugin was unloaded.");
 	OnUnloadPlugin();
 }
 

@@ -107,7 +107,7 @@ main()
 {
 new ival, Float:fval;
 
-print("");
+print("[ToadGM register to function]");
 printf("");
 format("", 0, "");
 SendClientMessage(0, 0, "");
@@ -416,4 +416,96 @@ StopRecordingPlayerData(0);
 
 SelectTextDraw(0, 0); // enables the mouse so the player can select a textdraw
 CancelSelectTextDraw(0);	// cancel textdraw selection with the mouse
+
+// Objects
+
+CreateObject(0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+AttachObjectToVehicle(0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+AttachObjectToObject(0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0);
+AttachObjectToPlayer(0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+SetObjectPos(0, 0.0, 0.0, 0.0);
+GetObjectPos(0, fval, fval, fval);
+SetObjectRot(0, 0.0, 0.0, 0.0);
+GetObjectRot(0, fval, fval, fval);
+IsValidObject(0);
+DestroyObject(0);
+MoveObject(0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+StopObject(0);
+IsObjectMoving(0);
+EditObject(0, 0);
+EditPlayerObject(0, 0);
+SelectObject(0);
+CancelEdit(0);
+CreatePlayerObject(0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+AttachPlayerObjectToVehicle(0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+SetPlayerObjectPos(0, 0, 0.0, 0.0, 0.0);
+GetPlayerObjectPos(0, 0, fval, fval, fval);
+SetPlayerObjectRot(0, 0, 0.0, 0.0, 0.0);
+GetPlayerObjectRot(0, 0, fval, fval, fval);
+IsValidPlayerObject(0, 0);
+DestroyPlayerObject(0, 0);
+MovePlayerObject(0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+StopPlayerObject(0, 0);
+IsPlayerObjectMoving(0, 0);
+AttachPlayerObjectToPlayer(0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0);
+
+SetObjectMaterial(0, 0, 0, "", "", 0);
+SetPlayerObjectMaterial(0, 0, 0, 0, "", "", 0);
+
+SetObjectMaterialText(0, "", 0, 0, "", 0, 0, 0, 0, 0);
+SetPlayerObjectMaterialText(0, 0, "", 0, 0, "", 0, 0, 0, 0, 0);
+
+// Vehicle
+CreateVehicle(0, 0.0, 0.0, 0.0, 0.0, 0, 0, 0);
+DestroyVehicle(0);
+IsVehicleStreamedIn(0, 0);
+GetVehiclePos(0, fval, fval, fval);
+SetVehiclePos(0, fval, fval, fval);
+GetVehicleZAngle(0, fval);
+GetVehicleRotationQuat(0, fval, fval, fval, fval);
+GetVehicleDistanceFromPoint(0, 0.0, 0.0, 0.0);
+SetVehicleZAngle(0, 0.0);
+SetVehicleParamsForPlayer(0, 0, 0, 0);
+ManualVehicleEngineAndLights();
+SetVehicleParamsEx(0, 0, 0, 0, 0, 0, 0, 0);
+GetVehicleParamsEx(0, ival, ival, ival, ival, ival, ival, ival);
+SetVehicleToRespawn(0);
+LinkVehicleToInterior(0, 0);
+AddVehicleComponent(0, 0);
+RemoveVehicleComponent(0, 0);
+ChangeVehicleColor(0, 0, 0);
+ChangeVehiclePaintjob(0, 0);
+SetVehicleHealth(0, 0.0);
+GetVehicleHealth(0, fval);
+AttachTrailerToVehicle(0, 0);
+DetachTrailerFromVehicle(0);
+IsTrailerAttachedToVehicle(0);
+GetVehicleTrailer(0);
+SetVehicleNumberPlate(0, "");
+GetVehicleModel(0);
+GetVehicleComponentInSlot(0, 0); // There is 1 slot for each CARMODTYPE_*
+GetVehicleComponentType(0); // Find CARMODTYPE_* for component id
+RepairVehicle(0); // Repairs the damage model and resets the health
+GetVehicleVelocity(0, fval, fval, fval);
+SetVehicleVelocity(0, 0.0, 0.0, 0.0);
+SetVehicleAngularVelocity(0, 0.0, 0.0, 0.0);
+GetVehicleDamageStatus(0, ival, ival, ival, ival);
+UpdateVehicleDamageStatus(0, 0, 0, 0, 0);
+
+GetVehicleModelInfo(0, 0, fval, fval, fval);
+
+// Virtual Worlds
+SetVehicleVirtualWorld(0, 0);
+GetVehicleVirtualWorld(0);
+
+db_open("");
+db_close(DB:0);
+db_query(DB:0, "");
+db_free_result(DBResult:0);
+db_num_rows(DBResult:0);
+db_next_row(DBResult:0);
+db_num_fields(DBResult:0);
+db_field_name(DBResult:0, 0, "", 0);
+db_get_field(DBResult:0, 0, "", 0);
+db_get_field_assoc(DBResult:0, "", "", 0);
 }

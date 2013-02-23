@@ -1,5 +1,5 @@
 #pragma once
 
-void OnLoadPlugin();
+int OnLoadPlugin();
 void OnUnloadPlugin();
 void OnProcessTick();

@@ -34,9 +34,9 @@ public OnRecordingPlaybackEnd() return NPC_OnRecordingPlaybackEnd();
 
 main()
 {
-new Float:fval;
-new ival;
-print("");
+new ival, Float:fval;
+
+print("[ToadNPC register to function]");
 printf("");
 format("", 0, "");
 SetTimer("", 0, 0);
