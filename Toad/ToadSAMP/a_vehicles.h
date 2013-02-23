@@ -50,7 +50,7 @@ int AttachTrailerToVehicle(int trailerid, int vehicleid);
 int DetachTrailerFromVehicle(int vehicleid);
 int IsTrailerAttachedToVehicle(int vehicleid);
 int GetVehicleTrailer(int vehicleid);
-int SetVehicleNumberPlate(int vehicleid, int numberplate[]);
+int SetVehicleNumberPlate(int vehicleid, char numberplate[]);
 int GetVehicleModel(int vehicleid);
 int GetVehicleComponentInSlot(int vehicleid, int slot); // There is 1 slot for each CARMODTYPE_*
 int GetVehicleComponentType(int component); // Find CARMODTYPE_* for component id

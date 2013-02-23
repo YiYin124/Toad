@@ -15,4 +15,4 @@ int db_next_row(DBResult dbresult);
 int db_num_fields(DBResult dbresult);
 int db_field_name(DBResult dbresult, int field, char result[], int maxlength);
 int db_get_field(DBResult dbresult, int field, char result[], int maxlength);
-int db_get_field_assoc(DBResult dbresult, const char field[], int result[], int maxlength);
+int db_get_field_assoc(DBResult dbresult, const char field[], char result[], int maxlength);
