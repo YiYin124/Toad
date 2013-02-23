@@ -109,7 +109,7 @@ public OnRegisterFunctions()
 {
 new ival, Float:fval;
 //new str[2];
-print("[ToadGM register to function]");
+print("");
 printf("");
 format("", 0, "");
 SendClientMessage(0, 0, "");
@@ -169,7 +169,7 @@ IsPlayerAdmin(0);
 Kick(0);
 Ban(0);
 BanEx(0, "");
-//SendRconCommand("");
+SendRconCommand("");
 GetServerVarAsString("", "", 0);
 GetServerVarAsInt("");
 GetServerVarAsBool("");
@@ -507,9 +507,11 @@ db_num_fields(DBResult:0);
 db_field_name(DBResult:0, 0, "", 0);
 db_get_field(DBResult:0, 0, "", 0);
 db_get_field_assoc(DBResult:0, "", "", 0);
+}
 
+main()
+{
 //[Toad Other]
 SendRconCommand("loadfs ToadFS");
 }
 
-main() {}

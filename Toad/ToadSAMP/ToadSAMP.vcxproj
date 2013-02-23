@@ -81,10 +81,9 @@
     <ClInclude Include="a_players.h" />
     <ClInclude Include="a_samp.h" />
     <ClInclude Include="a_sampdb.h" />
+    <ClInclude Include="a_toad.h" />
     <ClInclude Include="a_vehicles.h" />
     <ClInclude Include="toadSAMP.h" />
-    <ClInclude Include="toad_callbacks.h" />
-    <ClInclude Include="toad_functions.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ToadCallbacks.c" />

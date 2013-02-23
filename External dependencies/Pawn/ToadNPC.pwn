@@ -32,11 +32,11 @@ public OnVehicleStreamIn(vehicleid) return NPC_OnVehicleStreamIn(vehicleid);
 public OnVehicleStreamOut(vehicleid) return NPC_OnVehicleStreamOut(vehicleid);
 public OnRecordingPlaybackEnd() return NPC_OnRecordingPlaybackEnd();
 
-main()
+forward OnRegisterFunctions();
+public OnRegisterFunctions()
 {
 new ival, Float:fval;
-
-print("[ToadNPC register to function]");
+print("");
 printf("");
 format("", 0, "");
 SetTimer("", 0, 0);
@@ -72,3 +72,4 @@ StopRecordingPlayback();
 PauseRecordingPlayback();
 ResumeRecordingPlayback();
 }
+main() {}

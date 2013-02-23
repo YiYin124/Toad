@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "a_npc.h"
+#include "toadSAMP.h"
 
 //native format(output[], len, const format[], {Float,_}:...);
 //native SetTimer(funcname[], interval, repeating);

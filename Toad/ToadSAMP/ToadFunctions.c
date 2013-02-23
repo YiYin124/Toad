@@ -1,5 +1,11 @@
 #include <stdio.h>
+#include "a_samp.h"
 #include "toadSAMP.h"
+
+int println(const char string[])
+{
+	return amx_CallNativeFunc(gAMX, "print", "s", string);
+}
 
 //native format(output[], len, const format[], {Float,_}:...);
 int SendClientMessage(int playerid, int color, const char message[])
@@ -37,15 +43,15 @@ int GameTextForPlayer(int playerid, const char string[], int time, int style)
 	return amx_CallNativeFunc(gAMX, __FUNCTION__, "isii", playerid, string, time, style);
 }
 
-int SetTimer(char funcname[], int interval, int repeating)
-{
-	return amx_CallNativeFunc(gAMX, __FUNCTION__, "sii", funcname, interval, repeating);
-}
+//int SetTimer(char funcname[], int interval, int repeating)
+//{
+//	return amx_CallNativeFunc(gAMX, __FUNCTION__, "sii", funcname, interval, repeating);
+//}
 //int SetTimerEx(char funcname[], int interval, int repeating, const char format[], {Float,_}:...);
-int KillTimer(int timerid)
-{
-	return amx_CallNativeFunc(gAMX, __FUNCTION__, "i", timerid);
-}
+//int KillTimer(int timerid)
+//{
+//	return amx_CallNativeFunc(gAMX, __FUNCTION__, "i", timerid);
+//}
 int GetTickCount()
 {
 	return amx_CallNativeFunc(gAMX, __FUNCTION__, "");

@@ -1,4 +1,5 @@
 #include "a_npc.h"
+#include "toadSAMP.h"
 
 static cell AMX_NATIVE_CALL NPC_OnNPCModeInit(AMX *amx, const cell *params)
 {

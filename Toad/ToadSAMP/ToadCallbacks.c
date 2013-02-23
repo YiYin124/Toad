@@ -1,3 +1,4 @@
+#include "a_samp.h"
 #include "toadSAMP.h"
 
 static cell AMX_NATIVE_CALL FS_OnFilterScriptInit(AMX *amx, const cell *params)

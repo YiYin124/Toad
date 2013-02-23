@@ -1,11 +1,12 @@
-#include "../ToadSAMP/toadSAMP.h"
+#include <stdio.h> // 要用C库支援
+#include <string.h> // 应该在这里
+#include "../ToadSAMP/a_samp.h"
 
+//这个是一个Gamwmode
 
 int OnLoadPlugin()
 {
 	printfln("[TEST] OnLoadPlugin");
-//	_sleep(5000);
-//	printfln("[TEST] OnLoadPlugin OK");
 	return 1;
 }
 
@@ -23,37 +24,38 @@ void OnProcessTick()
 
 int OnGameModeInit()
 {
-	printfln("[DEBUG] OnGameModeInit");
+	println("[DEBUG] OnGameModeInit");
 	return 1;
 }
 
 int OnGameModeExit()
 {
-	printfln("[DEBUG] OnGameModeExit");
+	println("[DEBUG] OnGameModeExit");
 	return 1;
 }
 
 int OnFilterScriptInit()
 {
-	printfln("[DEBUG] OnFilterScriptInit");
+	println("[DEBUG] OnFilterScriptInit");
 	return 1;
 }
 
 int OnFilterScriptExit()
 {
-	printfln("[DEBUG] OnFilterScriptExit");
+	println("[DEBUG] OnFilterScriptExit");
 	return 1;
 }
 
 int OnPlayerConnect(int playerid)
 {
+	SendClientMessage(playerid, 0xFFFFFFFF, "Welcome to C's server!");
 	printfln("[DEBUG] OnPlayerConnect playerid[%d]", playerid);
 	return 1;
 }
 
 int OnPlayerDisconnect(int playerid, int reason)
 {
-
+	printfln("[DEBUG] OnPlayerDisconnect playerid[%d]", playerid);
 	return 1;
 }
 
@@ -143,7 +145,7 @@ int OnPlayerLeaveRaceCheckpoint(int playerid)
 
 int OnRconCommand(char cmd[])
 {
-
+	printfln("RCON CMD %s", cmd);
 	return 1;
 }
 

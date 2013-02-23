@@ -4,11 +4,7 @@
 *  (c) Copyright 2009, SA-MP Team
 *
 */
-
-#include "toad_callbacks.h"
-#include "toad_functions.h"
-#include "../ToadAMX/toadAMX.h"
-extern AMX *gAMX;
+#include "a_toad.h"
 // --------------------------------------------------
 // Natives
 // --------------------------------------------------

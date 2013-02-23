@@ -1,6 +1,8 @@
 #include "toadSAMP.h"
+#include "a_toad.h"
 
 AMX *gAMX = NULL;
+void (*printfln)(char* format, ...);
 
 PLUGIN_EXPORT unsigned int PLUGIN_CALL Supports() 
 {
@@ -24,7 +26,7 @@ PLUGIN_EXPORT int PLUGIN_CALL AmxLoad( AMX *amx )
 	int index;
 	if (amx_FindPublic(amx, "OnRegisterFunctions", &index) == AMX_ERR_NOTFOUND)
 	{
-		printfln("['ToadGM.pwn'ERR] 'AMX_ERR_NOTFOUND'");
+		printfln("['OnRegisterFunctions'ERR] 'AMX_ERR_NOTFOUND'");
 		return AMX_ERR_NOTFOUND;
 	}
 

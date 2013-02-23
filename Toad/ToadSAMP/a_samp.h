@@ -9,6 +9,8 @@
 #include "a_vehicles.h"
 #include "a_objects.h"
 #include "a_sampdb.h"
+//Toad
+#include "a_toad.h"
 
 // Limits and internal constants
 #define MAX_PLAYER_NAME							(24)
@@ -38,6 +40,7 @@
 // Util
 int println(const char string[]);
 
+
 //native format(output[], len, const format[], {Float,_}:...);
 int SendClientMessage(int playerid, int color, const char message[]);
 int SendClientMessageToAll(int color, const char message[]);
@@ -46,9 +49,9 @@ int SendPlayerMessageToAll(int senderid, const char message[]);
 int SendDeathMessage(int killer, int killee, int weapon);
 int GameTextForAll(const char string[], int time, int style);
 int GameTextForPlayer(int playerid, const char string[], int time, int style);
-int SetTimer(char funcname[], int interval, int repeating);
+//int SetTimer(char funcname[], int interval, int repeating);
 //int SetTimerEx(char funcname[], int interval, int repeating, const char format[], {Float,_}:...);
-int KillTimer(int timerid);
+//int KillTimer(int timerid);
 int GetTickCount();
 int GetMaxPlayers();
 //int CallRemoteFunction(const char function[], const char format[], {Float,_}:...);
