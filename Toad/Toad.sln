@@ -7,6 +7,19 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToadSAMP", "ToadSAMP\ToadSA
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TEST", "TEST\TEST.vcxproj", "{D2BD80DD-9F84-44AC-AB29-FB975F5F2683}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External dependencies", "External dependencies", "{13F3B675-D788-4F91-8E1A-D74E2371031E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pawn", "Pawn", "{CE264C3E-6FEA-46D1-9628-5F39C8803207}"
+	ProjectSection(SolutionItems) = preProject
+		..\External dependencies\Pawn\ToadFS.pwn = ..\External dependencies\Pawn\ToadFS.pwn
+		..\External dependencies\Pawn\ToadGM.pwn = ..\External dependencies\Pawn\ToadGM.pwn
+		..\External dependencies\Pawn\ToadNPC.pwn = ..\External dependencies\Pawn\ToadNPC.pwn
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CToad Example", "CToad Example", "{20DD8F67-2F52-4C6D-BAAB-C94674F639F2}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rivershell-Example", "rivershell-Example\rivershell-Example.vcxproj", "{054DAB59-F191-4A0F-8F32-75C457ECC85C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -25,8 +38,16 @@ Global
 		{D2BD80DD-9F84-44AC-AB29-FB975F5F2683}.Debug|Win32.Build.0 = Debug|Win32
 		{D2BD80DD-9F84-44AC-AB29-FB975F5F2683}.Release|Win32.ActiveCfg = Release|Win32
 		{D2BD80DD-9F84-44AC-AB29-FB975F5F2683}.Release|Win32.Build.0 = Release|Win32
+		{054DAB59-F191-4A0F-8F32-75C457ECC85C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{054DAB59-F191-4A0F-8F32-75C457ECC85C}.Debug|Win32.Build.0 = Debug|Win32
+		{054DAB59-F191-4A0F-8F32-75C457ECC85C}.Release|Win32.ActiveCfg = Release|Win32
+		{054DAB59-F191-4A0F-8F32-75C457ECC85C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CE264C3E-6FEA-46D1-9628-5F39C8803207} = {13F3B675-D788-4F91-8E1A-D74E2371031E}
+		{054DAB59-F191-4A0F-8F32-75C457ECC85C} = {20DD8F67-2F52-4C6D-BAAB-C94674F639F2}
 	EndGlobalSection
 EndGlobal

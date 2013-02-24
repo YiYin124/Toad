@@ -15,9 +15,6 @@
 #include "../ToadSAMP/a_samp.h"
 
 //这个是一个Gamwmode
-//int OnGameModeInit();
-//extern _OnGameModeInit pOnGameModeInit = OnGameModeInit;
-
 int OnLoadPlugin()
 {
 	printfln("[TEST] OnLoadPlugin");

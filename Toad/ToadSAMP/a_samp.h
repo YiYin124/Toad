@@ -282,122 +282,69 @@ int ShowPlayerDialog(int playerid, int dialogid, int style, char caption[], char
 // Forwards (Callback declarations)
 // --------------------------------------------------
 
-typedef int (* _OnGameModeInit)();
-typedef int (* _OnGameModeExit)();
-typedef int (* _OnFilterScriptInit)();
-typedef int (* _OnFilterScriptExit)();
-typedef int (* _OnPlayerConnect)(int playerid);
-typedef int (* _OnPlayerDisconnect)(int playerid, int reason);
-typedef int (* _OnPlayerSpawn)(int playerid);
-typedef int (* _OnPlayerDeath)(int playerid, int killerid, int reason);
-typedef int (* _OnVehicleSpawn)(int vehicleid);
-typedef int (* _OnVehicleDeath)(int vehicleid, int killerid);
-typedef int (* _OnPlayerText)(int playerid, char text[]);
-typedef int (* _OnPlayerCommandText)(int playerid, char cmdtext[]);
-typedef int (* _OnPlayerRequestClass)(int playerid, int classid);
-typedef int (* _OnPlayerEnterVehicle)(int playerid, int vehicleid, int ispassenger);
-typedef int (* _OnPlayerExitVehicle)(int playerid, int vehicleid);
-typedef int (* _OnPlayerStateChange)(int playerid, int newstate, int oldstate);
-typedef int (* _OnPlayerEnterCheckpoint)(int playerid);
-typedef int (* _OnPlayerLeaveCheckpoint)(int playerid);
-typedef int (* _OnPlayerEnterRaceCheckpoint)(int playerid);
-typedef int (* _OnPlayerLeaveRaceCheckpoint)(int playerid);
-typedef int (* _OnRconCommand)(char cmd[]);
-typedef int (* _OnPlayerRequestSpawn)(int playerid);
-typedef int (* _OnObjectMoved)(int objectid);
-typedef int (* _OnPlayerObjectMoved)(int playerid, int objectid);
-typedef int (* _OnPlayerPickUpPickup)(int playerid, int pickupid);
-typedef int (* _OnVehicleMod)(int playerid, int vehicleid, int componentid);
-typedef int (* _OnEnterExitModShop)(int playerid, int enterexit, int interiorid);
-typedef int (* _OnVehiclePaintjob)(int playerid, int vehicleid, int paintjobid);
-typedef int (* _OnVehicleRespray)(int playerid, int vehicleid, int color1, int color2);
-typedef int (* _OnVehicleDamageStatusUpdate)(int vehicleid, int playerid);
-typedef int (* _OnUnoccupiedVehicleUpdate)(int vehicleid, int playerid, int passenger_seat);
-typedef int (* _OnPlayerSelectedMenuRow)(int playerid, int row);
-typedef int (* _OnPlayerExitedMenu)(int playerid);
-typedef int (* _OnPlayerInteriorChange)(int playerid, int newinteriorid, int oldinteriorid);
-typedef int (* _OnPlayerKeyStateChange)(int playerid, int newkeys, int oldkeys);
-typedef int (* _OnRconLoginAttempt)(char ip[], char password[], int success);
-typedef int (* _OnPlayerUpdate)(int playerid);
-typedef int (* _OnPlayerStreamIn)(int playerid, int forplayerid);
-typedef int (* _OnPlayerStreamOut)(int playerid, int forplayerid);
-typedef int (* _OnVehicleStreamIn)(int vehicleid, int forplayerid);
-typedef int (* _OnVehicleStreamOut)(int vehicleid, int forplayerid);
-typedef int (* _OnDialogResponse)(int playerid, int dialogid, int response, int listitem, char inputtext[]);
-typedef int (* _OnPlayerTakeDamage)(int playerid, int issuerid, float amount, int weaponid);
-typedef int (* _OnPlayerGiveDamage)(int playerid, int damagedid, float amount, int weaponid);
-typedef int (* _OnPlayerClickMap)(int playerid, float fX, float fY, float fZ);
-typedef int (* _OnPlayerClickTextDraw)(int playerid, Text clickedid);
-typedef int (* _OnPlayerClickPlayerTextDraw)(int playerid, PlayerText playertextid);
-
-extern _OnGameModeInit pOnGameModeInit;
-extern _OnGameModeExit pOnGameModeExit;
-extern _OnFilterScriptInit pOnFilterScriptInit;
-extern _OnFilterScriptExit pOnFilterScriptExit;
-extern _OnPlayerConnect pOnPlayerConnect;
-extern _OnPlayerDisconnect pOnPlayerDisconnect;
-extern _OnPlayerSpawn pOnPlayerSpawn;
-extern _OnPlayerDeath pOnPlayerDeath;
-extern _OnVehicleSpawn pOnVehicleSpawn;
-extern _OnVehicleDeath pOnVehicleDeath;
-extern _OnPlayerText pOnPlayerText;
-extern _OnPlayerCommandText pOnPlayerCommandText;
-extern _OnPlayerRequestClass pOnPlayerRequestClass;
-extern _OnPlayerEnterVehicle pOnPlayerEnterVehicle;
-extern _OnPlayerExitVehicle pOnPlayerExitVehicle;
-extern _OnPlayerStateChange pOnPlayerStateChange;
-extern _OnPlayerEnterCheckpoint pOnPlayerEnterCheckpoint;
-extern _OnPlayerLeaveCheckpoint pOnPlayerLeaveCheckpoint;
-extern _OnPlayerEnterRaceCheckpoint pOnPlayerEnterRaceCheckpoint;
-extern _OnPlayerLeaveRaceCheckpoint pOnPlayerLeaveRaceCheckpoint;
-extern _OnRconCommand pOnRconCommand;
-extern _OnPlayerRequestSpawn pOnPlayerRequestSpawn;
-extern _OnObjectMoved pOnObjectMoved;
-extern _OnPlayerObjectMoved pOnPlayerObjectMoved;
-extern _OnPlayerPickUpPickup pOnPlayerPickUpPickup;
-extern _OnVehicleMod pOnVehicleMod;
-extern _OnEnterExitModShop pOnEnterExitModShop;
-extern _OnVehiclePaintjob pOnVehiclePaintjob;
-extern _OnVehicleRespray pOnVehicleRespray;
-extern _OnVehicleDamageStatusUpdate pOnVehicleDamageStatusUpdate;
-extern _OnUnoccupiedVehicleUpdate pOnUnoccupiedVehicleUpdate;
-extern _OnPlayerSelectedMenuRow pOnPlayerSelectedMenuRow;
-extern _OnPlayerExitedMenu pOnPlayerExitedMenu;
-extern _OnPlayerInteriorChange pOnPlayerInteriorChange;
-extern _OnPlayerKeyStateChange pOnPlayerKeyStateChange;
-extern _OnRconLoginAttempt pOnRconLoginAttempt;
-extern _OnPlayerUpdate pOnPlayerUpdate;
-extern _OnPlayerStreamIn pOnPlayerStreamIn;
-extern _OnPlayerStreamOut pOnPlayerStreamOut;
-extern _OnVehicleStreamIn pOnVehicleStreamIn;
-extern _OnVehicleStreamOut pOnVehicleStreamOut;
-extern _OnDialogResponse pOnDialogResponse;
-extern _OnPlayerTakeDamage pOnPlayerTakeDamage;
-extern _OnPlayerGiveDamage pOnPlayerGiveDamage;
-extern _OnPlayerClickMap pOnPlayerClickMap;
-extern _OnPlayerClickTextDraw pOnPlayerClickTextDraw;
-extern _OnPlayerClickPlayerTextDraw pOnPlayerClickPlayerTextDraw;
-
+int OnGameModeInit();
+int OnGameModeExit();
+int OnFilterScriptInit();
+int OnFilterScriptExit();
+int OnPlayerConnect(int playerid);
+int OnPlayerDisconnect(int playerid, int reason);
+int OnPlayerSpawn(int playerid);
+int OnPlayerDeath(int playerid, int killerid, int reason);
+int OnVehicleSpawn(int vehicleid);
+int OnVehicleDeath(int vehicleid, int killerid);
+int OnPlayerText(int playerid, char text[]);
+int OnPlayerCommandText(int playerid, char cmdtext[]);
+int OnPlayerRequestClass(int playerid, int classid);
+int OnPlayerEnterVehicle(int playerid, int vehicleid, int ispassenger);
+int OnPlayerExitVehicle(int playerid, int vehicleid);
+int OnPlayerStateChange(int playerid, int newstate, int oldstate);
+int OnPlayerEnterCheckpoint(int playerid);
+int OnPlayerLeaveCheckpoint(int playerid);
+int OnPlayerEnterRaceCheckpoint(int playerid);
+int OnPlayerLeaveRaceCheckpoint(int playerid);
+int OnRconCommand(char cmd[]);
+int OnPlayerRequestSpawn(int playerid);
+int OnObjectMoved(int objectid);
+int OnPlayerObjectMoved(int playerid, int objectid);
+int OnPlayerPickUpPickup(int playerid, int pickupid);
+int OnVehicleMod(int playerid, int vehicleid, int componentid);
+int OnEnterExitModShop(int playerid, int enterexit, int interiorid);
+int OnVehiclePaintjob(int playerid, int vehicleid, int paintjobid);
+int OnVehicleRespray(int playerid, int vehicleid, int color1, int color2);
+int OnVehicleDamageStatusUpdate(int vehicleid, int playerid);
+int OnUnoccupiedVehicleUpdate(int vehicleid, int playerid, int passenger_seat);
+int OnPlayerSelectedMenuRow(int playerid, int row);
+int OnPlayerExitedMenu(int playerid);
+int OnPlayerInteriorChange(int playerid, int newinteriorid, int oldinteriorid);
+int OnPlayerKeyStateChange(int playerid, int newkeys, int oldkeys);
+int OnRconLoginAttempt(char ip[], char password[], int success);
+int OnPlayerUpdate(int playerid);
+int OnPlayerStreamIn(int playerid, int forplayerid);
+int OnPlayerStreamOut(int playerid, int forplayerid);
+int OnVehicleStreamIn(int vehicleid, int forplayerid);
+int OnVehicleStreamOut(int vehicleid, int forplayerid);
+int OnDialogResponse(int playerid, int dialogid, int response, int listitem, char inputtext[]);
+int OnPlayerTakeDamage(int playerid, int issuerid, float amount, int weaponid);
+int OnPlayerGiveDamage(int playerid, int damagedid, float amount, int weaponid);
+int OnPlayerClickMap(int playerid, float fX, float fY, float fZ);
+int OnPlayerClickTextDraw(int playerid, Text clickedid);
+int OnPlayerClickPlayerTextDraw(int playerid, PlayerText playertextid);
 
 #define CLICK_SOURCE_SCOREBOARD		0
-typedef int (* _OnPlayerClickPlayer)(int playerid, int clickedplayerid, int source);
-extern _OnPlayerClickPlayer pOnPlayerClickPlayer;
+int OnPlayerClickPlayer(int playerid, int clickedplayerid, int source);
 #define EDIT_RESPONSE_CANCEL		0
 #define EDIT_RESPONSE_FINAL			1
 #define EDIT_RESPONSE_UPDATE		2
 
-typedef int (* _OnPlayerEditObject)(int playerid, int playerobject, int objectid, int response, 
+int OnPlayerEditObject(int playerid, int playerobject, int objectid, int response, 
 					   float fX, float fY, float fZ, float fRotX, float fRotY, float fRotZ );
-extern _OnPlayerEditObject pOnPlayerEditObject;
 
-typedef int (* _OnPlayerEditAttachedObject)(int playerid, int response, int index, int modelid, int boneid,
+int OnPlayerEditAttachedObject(int playerid, int response, int index, int modelid, int boneid,
 							   float fOffsetX, float fOffsetY, float fOffsetZ,
 							   float fRotX, float fRotY, float fRotZ,
 							   float fScaleX, float fScaleY, float fScaleZ);
-extern _OnPlayerEditAttachedObject pOnPlayerEditAttachedObject;
 #define SELECT_OBJECT_GLOBAL_OBJECT	1
 #define SELECT_OBJECT_PLAYER_OBJECT 2
 
-typedef int (* _OnPlayerSelectObject)(int playerid, int type, int objectid, int modelid, float fX, float fY, float fZ);
-extern _OnPlayerSelectObject pOnPlayerSelectObject;
+int OnPlayerSelectObject(int playerid, int type, int objectid, int modelid, float fX, float fY, float fZ);
 // --------------------------------------------------

@@ -120,238 +120,185 @@ static int DefaultOnPlayerEditAttachedObject(int playerid, int response, int ind
 static int DefaultOnPlayerSelectObject(int playerid, int type, int objectid, int modelid, float fX, float fY, float fZ) { return 0; }
 
 
-_OnGameModeInit pOnGameModeInit = DefaultOnGameModeInit;
-_OnGameModeExit pOnGameModeExit = DefaultOnGameModeExit;
-_OnFilterScriptInit pOnFilterScriptInit = DefaultOnFilterScriptInit;
-_OnFilterScriptExit pOnFilterScriptExit = DefaultOnFilterScriptExit;
-_OnPlayerConnect pOnPlayerConnect = DefaultOnPlayerConnect;
-_OnPlayerDisconnect pOnPlayerDisconnect = DefaultOnPlayerDisconnect;
-_OnPlayerSpawn pOnPlayerSpawn = DefaultOnPlayerSpawn;
-_OnPlayerDeath pOnPlayerDeath = DefaultOnPlayerDeath;
-_OnVehicleSpawn pOnVehicleSpawn = DefaultOnVehicleSpawn;
-_OnVehicleDeath pOnVehicleDeath = DefaultOnVehicleDeath;
-_OnPlayerText pOnPlayerText = DefaultOnPlayerText;
-_OnPlayerCommandText pOnPlayerCommandText = DefaultOnPlayerCommandText;
-_OnPlayerRequestClass pOnPlayerRequestClass = DefaultOnPlayerRequestClass;
-_OnPlayerEnterVehicle pOnPlayerEnterVehicle = DefaultOnPlayerEnterVehicle;
-_OnPlayerExitVehicle pOnPlayerExitVehicle = DefaultOnPlayerExitVehicle;
-_OnPlayerStateChange pOnPlayerStateChange = DefaultOnPlayerStateChange;
-_OnPlayerEnterCheckpoint pOnPlayerEnterCheckpoint = DefaultOnPlayerEnterCheckpoint;
-_OnPlayerLeaveCheckpoint pOnPlayerLeaveCheckpoint = DefaultOnPlayerLeaveCheckpoint;
-_OnPlayerEnterRaceCheckpoint pOnPlayerEnterRaceCheckpoint = DefaultOnPlayerEnterRaceCheckpoint;
-_OnPlayerLeaveRaceCheckpoint pOnPlayerLeaveRaceCheckpoint = DefaultOnPlayerLeaveRaceCheckpoint;
-_OnRconCommand pOnRconCommand = DefaultOnRconCommand;
-_OnPlayerRequestSpawn pOnPlayerRequestSpawn = DefaultOnPlayerRequestSpawn;
-_OnObjectMoved pOnObjectMoved = DefaultOnObjectMoved;
-_OnPlayerObjectMoved pOnPlayerObjectMoved = DefaultOnPlayerObjectMoved;
-_OnPlayerPickUpPickup pOnPlayerPickUpPickup = DefaultOnPlayerPickUpPickup;
-_OnVehicleMod pOnVehicleMod = DefaultOnVehicleMod;
-_OnEnterExitModShop pOnEnterExitModShop = DefaultOnEnterExitModShop;
-_OnVehiclePaintjob pOnVehiclePaintjob = DefaultOnVehiclePaintjob;
-_OnVehicleRespray pOnVehicleRespray = DefaultOnVehicleRespray;
-_OnVehicleDamageStatusUpdate pOnVehicleDamageStatusUpdate = DefaultOnVehicleDamageStatusUpdate;
-_OnUnoccupiedVehicleUpdate pOnUnoccupiedVehicleUpdate = DefaultOnUnoccupiedVehicleUpdate;
-_OnPlayerSelectedMenuRow pOnPlayerSelectedMenuRow = DefaultOnPlayerSelectedMenuRow;
-_OnPlayerExitedMenu pOnPlayerExitedMenu = DefaultOnPlayerExitedMenu;
-_OnPlayerInteriorChange pOnPlayerInteriorChange = DefaultOnPlayerInteriorChange;
-_OnPlayerKeyStateChange pOnPlayerKeyStateChange = DefaultOnPlayerKeyStateChange;
-_OnRconLoginAttempt pOnRconLoginAttempt = DefaultOnRconLoginAttempt;
-_OnPlayerUpdate pOnPlayerUpdate = DefaultOnPlayerUpdate;
-_OnPlayerStreamIn pOnPlayerStreamIn = DefaultOnPlayerStreamIn;
-_OnPlayerStreamOut pOnPlayerStreamOut = DefaultOnPlayerStreamOut;
-_OnVehicleStreamIn pOnVehicleStreamIn = DefaultOnVehicleStreamIn;
-_OnVehicleStreamOut pOnVehicleStreamOut = DefaultOnVehicleStreamOut;
-_OnDialogResponse pOnDialogResponse = DefaultOnDialogResponse;
-_OnPlayerTakeDamage pOnPlayerTakeDamage = DefaultOnPlayerTakeDamage;
-_OnPlayerGiveDamage pOnPlayerGiveDamage = DefaultOnPlayerGiveDamage;
-_OnPlayerClickMap pOnPlayerClickMap = DefaultOnPlayerClickMap;
-_OnPlayerClickTextDraw pOnPlayerClickTextDraw = DefaultOnPlayerClickTextDraw;
-_OnPlayerClickPlayerTextDraw pOnPlayerClickPlayerTextDraw = DefaultOnPlayerClickPlayerTextDraw;
-_OnPlayerClickPlayer pOnPlayerClickPlayer = DefaultOnPlayerClickPlayer;
-_OnPlayerEditObject pOnPlayerEditObject = DefaultOnPlayerEditObject;
-_OnPlayerEditAttachedObject pOnPlayerEditAttachedObject = DefaultOnPlayerEditAttachedObject;
-_OnPlayerSelectObject pOnPlayerSelectObject = DefaultOnPlayerSelectObject;
-
-
 static cell AMX_NATIVE_CALL FS_OnFilterScriptInit(AMX *amx, const cell *params)
 {
-	return pOnFilterScriptInit();
+	return OnFilterScriptInit();
 }
 
 static cell AMX_NATIVE_CALL FS_OnFilterScriptExit(AMX *amx, const cell *params)
 {
-	return pOnFilterScriptExit();
+	return OnFilterScriptExit();
 }
 
 static cell AMX_NATIVE_CALL FS_OnRconCommand(AMX *amx, const cell *params)
 {
 	char text[1024];
 	_amx_GetString(amx, params[1], text, sizeof(text));
-	return pOnRconCommand(text);
+	return OnRconCommand(text);
 }
 
 static cell AMX_NATIVE_CALL GM_OnGameModeInit(AMX *amx, const cell *params)
 {
-	return pOnGameModeInit();
+	return OnGameModeInit();
 }
 
 static cell AMX_NATIVE_CALL GM_OnGameModeExit(AMX *amx, const cell *params)
 {
-	return pOnGameModeExit();
+	return OnGameModeExit();
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerConnect(AMX *amx, const cell *params)
 {
-	return pOnPlayerConnect(params[1]);
+	return OnPlayerConnect(params[1]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerDisconnect(AMX *amx, const cell *params)
 {
-	return pOnPlayerDisconnect(params[1], params[2]);
+	return OnPlayerDisconnect(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerSpawn(AMX *amx, const cell *params)
 {
-	return pOnPlayerSpawn(params[1]);
+	return OnPlayerSpawn(params[1]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerDeath(AMX *amx, const cell *params)
 {
-	return pOnPlayerDeath(params[1], params[2], params[3]);
+	return OnPlayerDeath(params[1], params[2], params[3]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnVehicleSpawn(AMX *amx, const cell *params)
 {
-	return pOnVehicleSpawn(params[1]);
+	return OnVehicleSpawn(params[1]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnVehicleDeath(AMX *amx, const cell *params)
 {
-	return pOnVehicleDeath(params[1], params[2]);
+	return OnVehicleDeath(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerText(AMX *amx, const cell *params)
 {
 	char text[1024];
 	_amx_GetString(amx, params[2], text, sizeof(text));
-	return pOnPlayerText(params[1], text);
+	return OnPlayerText(params[1], text);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerCommandText(AMX *amx, const cell *params)
 {
 	char text[1024];
 	_amx_GetString(amx, params[2], text, sizeof(text));
-	return pOnPlayerCommandText(params[1], text);
+	return OnPlayerCommandText(params[1], text);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerRequestClass(AMX *amx, const cell *params)
 {
-	return pOnPlayerRequestClass(params[1], params[2]);
+	return OnPlayerRequestClass(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerEnterVehicle(AMX *amx, const cell *params)
 {
-	return pOnPlayerEnterVehicle(params[1], params[2], params[3]);
+	return OnPlayerEnterVehicle(params[1], params[2], params[3]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerExitVehicle(AMX *amx, const cell *params)
 {
-	return pOnPlayerExitVehicle(params[1], params[2]);
+	return OnPlayerExitVehicle(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerStateChange(AMX *amx, const cell *params)
 {
-	return pOnPlayerStateChange(params[1], params[2], params[3]);
+	return OnPlayerStateChange(params[1], params[2], params[3]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerEnterCheckpoint(AMX *amx, const cell *params)
 {
-	return pOnPlayerEnterCheckpoint(params[1]);
+	return OnPlayerEnterCheckpoint(params[1]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerLeaveCheckpoint(AMX *amx, const cell *params)
 {
-	return pOnPlayerLeaveCheckpoint(params[1]);
+	return OnPlayerLeaveCheckpoint(params[1]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerEnterRaceCheckpoint(AMX *amx, const cell *params)
 {
-	return pOnPlayerEnterRaceCheckpoint(params[1]);
+	return OnPlayerEnterRaceCheckpoint(params[1]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerLeaveRaceCheckpoint(AMX *amx, const cell *params)
 {
-	return pOnPlayerLeaveRaceCheckpoint(params[1]);
+	return OnPlayerLeaveRaceCheckpoint(params[1]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerRequestSpawn(AMX *amx, const cell *params)
 {
-	return pOnPlayerRequestClass(params[1], params[2]);
+	return OnPlayerRequestClass(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnObjectMoved(AMX *amx, const cell *params)
 {
-	return pOnObjectMoved(params[1]);
+	return OnObjectMoved(params[1]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerObjectMoved(AMX *amx, const cell *params)
 {
-	return pOnPlayerObjectMoved(params[1], params[2]);
+	return OnPlayerObjectMoved(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerPickUpPickup(AMX *amx, const cell *params)
 {
-	return pOnPlayerPickUpPickup(params[1], params[2]);
+	return OnPlayerPickUpPickup(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnVehicleMod(AMX *amx, const cell *params)
 {
-	return pOnVehicleMod(params[1], params[2], params[3]);
+	return OnVehicleMod(params[1], params[2], params[3]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnEnterExitModShop(AMX *amx, const cell *params)
 {
-	return pOnEnterExitModShop(params[1], params[2], params[3]);
+	return OnEnterExitModShop(params[1], params[2], params[3]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnVehiclePaintjob(AMX *amx, const cell *params)
 {
-	return pOnVehiclePaintjob(params[1], params[2], params[3]);
+	return OnVehiclePaintjob(params[1], params[2], params[3]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnVehicleRespray(AMX *amx, const cell *params)
 {
-	return pOnVehicleRespray(params[1], params[2], params[3], params[4]);
+	return OnVehicleRespray(params[1], params[2], params[3], params[4]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnVehicleDamageStatusUpdate(AMX *amx, const cell *params)
 {
-	return pOnVehicleDamageStatusUpdate(params[1], params[2]);
+	return OnVehicleDamageStatusUpdate(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnUnoccupiedVehicleUpdate(AMX *amx, const cell *params)
 {
-	return pOnUnoccupiedVehicleUpdate(params[1], params[2], params[3]);
+	return OnUnoccupiedVehicleUpdate(params[1], params[2], params[3]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerSelectedMenuRow(AMX *amx, const cell *params)
 {
-	return pOnPlayerSelectedMenuRow(params[1], params[2]);
+	return OnPlayerSelectedMenuRow(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerExitedMenu(AMX *amx, const cell *params)
 {
-	return pOnPlayerExitedMenu(params[1]);
+	return OnPlayerExitedMenu(params[1]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerInteriorChange(AMX *amx, const cell *params)
 {
-	return pOnPlayerInteriorChange(params[1], params[2], params[3]);
+	return OnPlayerInteriorChange(params[1], params[2], params[3]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerKeyStateChange(AMX *amx, const cell *params)
 {
-	return pOnPlayerKeyStateChange(params[1], params[2], params[3]);
+	return OnPlayerKeyStateChange(params[1], params[2], params[3]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnRconLoginAttempt(AMX *amx, const cell *params)
@@ -359,84 +306,84 @@ static cell AMX_NATIVE_CALL GM_OnRconLoginAttempt(AMX *amx, const cell *params)
 	char ip[1024], password[1024];
 	_amx_GetString(amx, params[1], ip, sizeof(ip));
 	_amx_GetString(amx, params[2], password, sizeof(password));
-	return pOnRconLoginAttempt(ip, password, params[3]);
+	return OnRconLoginAttempt(ip, password, params[3]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerUpdate(AMX *amx, const cell *params)
 {
-	return pOnPlayerUpdate(params[1]);
+	return OnPlayerUpdate(params[1]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerStreamIn(AMX *amx, const cell *params)
 {
-	return pOnPlayerStreamIn(params[1], params[2]);
+	return OnPlayerStreamIn(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerStreamOut(AMX *amx, const cell *params)
 {
-	return pOnPlayerStreamOut(params[1], params[2]);
+	return OnPlayerStreamOut(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnVehicleStreamIn(AMX *amx, const cell *params)
 {
-	return pOnVehicleStreamIn(params[1], params[2]);
+	return OnVehicleStreamIn(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnVehicleStreamOut(AMX *amx, const cell *params)
 {
-	return pOnVehicleStreamOut(params[1], params[2]);
+	return OnVehicleStreamOut(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnDialogResponse(AMX *amx, const cell *params)
 {
 	char inputtext[1024];
 	_amx_GetString(amx, params[5], inputtext, sizeof(inputtext));
-	return pOnDialogResponse(params[1], params[2], params[3], params[4], inputtext);
+	return OnDialogResponse(params[1], params[2], params[3], params[4], inputtext);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerTakeDamage(AMX *amx, const cell *params)
 {
-	return pOnPlayerTakeDamage(params[1], params[2], amx_ctof(params[3]), params[4]);
+	return OnPlayerTakeDamage(params[1], params[2], amx_ctof(params[3]), params[4]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerGiveDamage(AMX *amx, const cell *params)
 {
-	return pOnPlayerGiveDamage(params[1], params[2], amx_ctof(params[3]), params[4]);
+	return OnPlayerGiveDamage(params[1], params[2], amx_ctof(params[3]), params[4]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerClickMap(AMX *amx, const cell *params)
 {
-	return pOnPlayerClickMap(params[1], amx_ctof(params[2]), amx_ctof(params[3]), amx_ctof(params[4])); 
+	return OnPlayerClickMap(params[1], amx_ctof(params[2]), amx_ctof(params[3]), amx_ctof(params[4])); 
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerClickTextDraw(AMX *amx, const cell *params)
 {
-	return pOnPlayerClickTextDraw(params[1], params[2]);
+	return OnPlayerClickTextDraw(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerClickPlayerTextDraw(AMX *amx, const cell *params)
 {
-	return pOnPlayerClickPlayerTextDraw(params[1], params[2]);
+	return OnPlayerClickPlayerTextDraw(params[1], params[2]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerClickPlayer(AMX *amx, const cell *params)
 {
-	return pOnPlayerClickPlayer(params[1], params[2], params[3]);
+	return OnPlayerClickPlayer(params[1], params[2], params[3]);
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerEditObject(AMX *amx, const cell *params)
 {
-	return pOnPlayerEditObject(params[1], params[2], params[3], params[4], amx_ctof(params[5]), amx_ctof(params[6]), amx_ctof(params[7]), amx_ctof(params[8]), amx_ctof(params[9]), amx_ctof(params[10]));
+	return OnPlayerEditObject(params[1], params[2], params[3], params[4], amx_ctof(params[5]), amx_ctof(params[6]), amx_ctof(params[7]), amx_ctof(params[8]), amx_ctof(params[9]), amx_ctof(params[10]));
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerEditAttachedObject(AMX *amx, const cell *params)
 {
-	return pOnPlayerEditAttachedObject(params[1], params[2], params[3], params[4], params[5], amx_ctof(params[6]), amx_ctof(params[7]), amx_ctof(params[8]), amx_ctof(params[9]), amx_ctof(params[10]), amx_ctof(params[11]), amx_ctof(params[12]), amx_ctof(params[13]), amx_ctof(params[14]));
+	return OnPlayerEditAttachedObject(params[1], params[2], params[3], params[4], params[5], amx_ctof(params[6]), amx_ctof(params[7]), amx_ctof(params[8]), amx_ctof(params[9]), amx_ctof(params[10]), amx_ctof(params[11]), amx_ctof(params[12]), amx_ctof(params[13]), amx_ctof(params[14]));
 }
 
 static cell AMX_NATIVE_CALL GM_OnPlayerSelectObject(AMX *amx, const cell *params)
 {
-	return pOnPlayerSelectObject(params[1], params[2], params[3], params[4], amx_ctof(params[5]), amx_ctof(params[6]), amx_ctof(params[7]));
+	return OnPlayerSelectObject(params[1], params[2], params[3], params[4], amx_ctof(params[5]), amx_ctof(params[6]), amx_ctof(params[7]));
 }
 
 AMX_NATIVE_INFO GMCallBack[] = 
