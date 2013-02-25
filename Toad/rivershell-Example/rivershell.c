@@ -454,3 +454,43 @@ int OnPlayerEditAttachedObject(int playerid, int response, int index, int modeli
 							   float fScaleX, float fScaleY, float fScaleZ) { return 0; }
 
 int OnPlayerSelectObject(int playerid, int type, int objectid, int modelid, float fX, float fY, float fZ) { return 0; }
+
+int OnNPCConnect(int npcid)  { return 0; }
+
+int OnNPCDisconnect(int npcid, int reason)  { return 0; }
+
+int OnNPCSpawn(int npcid)  { return 0; }
+
+int OnNPCDeath(int npcid, int killerid, int reason)  { return 0; }
+
+int OnNPCText(int npcid, char text[])  { return 0; }
+
+int OnNPCEnterVehicle(int npcid, int vehicleid, int ispassenger)  { return 0; }
+
+int OnNPCExitVehicle(int npcid, int vehicleid)  { return 0; }
+
+int OnNPCStateChange(int npcid, int newstate, int oldstate)  { return 0; }
+
+int OnNPCEnterCheckpoint(int npcid)  { return 0; }
+
+int OnNPCLeaveCheckpoint(int npcid)  { return 0; }
+
+int OnNPCEnterRaceCheckpoint(int npcid)  { return 0; }
+
+int OnNPCLeaveRaceCheckpoint(int npcid)  { return 0; }
+
+int OnNPCObjectMoved(int npcid, int objectid)  { return 0; }
+
+int OnNPCPickUpPickup(int npcid, int pickupid)  { return 0; }
+
+int OnNPCInteriorChange(int npcid, int newinteriorid, int oldinteriorid)  { return 0; }
+
+int OnNPCUpdate(int npcid)  { return 0; }
+
+int OnNPCStreamIn(int npcid, int forplayerid)  { return 0; }
+
+int OnNPCStreamOut(int npcid, int forplayerid)  { return 0; }
+
+int OnNPCTakeDamage(int npcid, int issuerid, float amount, int weaponid)  { return 0; }
+
+int OnNPCGiveDamage(int npcid, int damagedid, float amount, int weaponid)  { return 0; }

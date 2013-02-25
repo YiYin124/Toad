@@ -16,5 +16,4 @@
 
 extern AMX *gAMX;
 extern void *pAMXFunctions;
-extern AMX_NATIVE_INFO GMCallBack[];
-//extern AMX_NATIVE_INFO NPCCallBack[];
+extern AMX_NATIVE_INFO RegisterCallBack[];

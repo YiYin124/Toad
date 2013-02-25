@@ -19,7 +19,6 @@ int println(const char string[])
 	return amx_CallNativeFunc(gAMX, "print", "s", string);
 }
 
-//native format(output[], len, const format[], {Float,_}:...);
 int SendClientMessage(int playerid, int color, const char message[])
 {
 	return amx_CallNativeFunc(gAMX, __FUNCTION__, "iis", playerid, color, message);
@@ -55,15 +54,6 @@ int GameTextForPlayer(int playerid, const char string[], int time, int style)
 	return amx_CallNativeFunc(gAMX, __FUNCTION__, "isii", playerid, string, time, style);
 }
 
-//int SetTimer(char funcname[], int interval, int repeating)
-//{
-//	return amx_CallNativeFunc(gAMX, __FUNCTION__, "sii", funcname, interval, repeating);
-//}
-//int SetTimerEx(char funcname[], int interval, int repeating, const char format[], {Float,_}:...);
-//int KillTimer(int timerid)
-//{
-//	return amx_CallNativeFunc(gAMX, __FUNCTION__, "i", timerid);
-//}
 int GetTickCount()
 {
 	return amx_CallNativeFunc(gAMX, __FUNCTION__, "");
@@ -72,8 +62,6 @@ int GetMaxPlayers()
 {
 	return amx_CallNativeFunc(gAMX, __FUNCTION__, "");
 }
-//int CallRemoteFunction(const char function[], const char format[], {Float,_}:...);
-//int CallLocalFunction(const function[], const format[], {Float,_}:...);
 
 float asin(float value)
 {

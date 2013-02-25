@@ -59,8 +59,13 @@ int OnFilterScriptExit()
 
 int OnPlayerConnect(int playerid)
 {
-	SendClientMessage(playerid, 0xFFFFFFFF, "Welcome to C's server!");
 	printfln("[DEBUG] OnPlayerConnect playerid[%d]", playerid);
+	return 1;
+}
+
+int OnNPCConnect(int npcid)
+{
+	printfln("[DEBUG] OnNPCConnect npcid[%d]", npcid);
 	return 1;
 }
 
@@ -342,4 +347,9 @@ int OnPlayerSelectObject(int playerid, int type, int objectid, int modelid, floa
 {
 
 	return 1;
+}
+
+int OnRecordingPlaybackEnd() 
+{ 
+	return 0; 
 }

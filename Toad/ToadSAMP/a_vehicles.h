@@ -5,6 +5,10 @@
 *
 */
 
+// --------------------------------------------------
+// Defines
+// --------------------------------------------------
+
 #define CARMODTYPE_SPOILER		0
 #define CARMODTYPE_HOOD			1
 #define CARMODTYPE_ROOF			2
@@ -23,6 +27,20 @@
 #define VEHICLE_PARAMS_UNSET	-1
 #define VEHICLE_PARAMS_OFF		0
 #define VEHICLE_PARAMS_ON		1
+
+#define VEHICLE_MODEL_INFO_SIZE				1
+#define VEHICLE_MODEL_INFO_FRONTSEAT		2
+#define VEHICLE_MODEL_INFO_REARSEAT			3
+#define VEHICLE_MODEL_INFO_PETROLCAP		4
+#define VEHICLE_MODEL_INFO_WHEELSFRONT		5
+#define VEHICLE_MODEL_INFO_WHEELSREAR		6
+#define VEHICLE_MODEL_INFO_WHEELSMID		7
+#define VEHICLE_MODEL_INFO_FRONT_BUMPER_Z	8
+#define VEHICLE_MODEL_INFO_REAR_BUMPER_Z	9
+
+// --------------------------------------------------
+// Natives
+// --------------------------------------------------
 
 // Vehicle
 int CreateVehicle(int vehicletype, float x, float y, float z, float rotation, int color1, int color2, int respawn_delay);
@@ -60,19 +78,24 @@ int SetVehicleVelocity(int vehicleid, float X, float Y, float Z);
 int SetVehicleAngularVelocity(int vehicleid, float X, float Y, float Z);
 int GetVehicleDamageStatus(int vehicleid, int *panels, int *doors, int *lights, int *tires);
 int UpdateVehicleDamageStatus(int vehicleid, int panels, int doors, int lights, int tires);
-
-#define VEHICLE_MODEL_INFO_SIZE				1
-#define VEHICLE_MODEL_INFO_FRONTSEAT		2
-#define VEHICLE_MODEL_INFO_REARSEAT			3
-#define VEHICLE_MODEL_INFO_PETROLCAP		4
-#define VEHICLE_MODEL_INFO_WHEELSFRONT		5
-#define VEHICLE_MODEL_INFO_WHEELSREAR		6
-#define VEHICLE_MODEL_INFO_WHEELSMID		7
-#define VEHICLE_MODEL_INFO_FRONT_BUMPER_Z	8
-#define VEHICLE_MODEL_INFO_REAR_BUMPER_Z	9
-
 int GetVehicleModelInfo(int vehiclemodel, int infotype, float *X, float *Y, float *Z);
 
 // Virtual Worlds
 int SetVehicleVirtualWorld(int vehicleid, int worldid);
 int GetVehicleVirtualWorld(int vehicleid);
+
+// --------------------------------------------------
+// Forwards (Callback declarations)
+// --------------------------------------------------
+
+int OnVehicleSpawn(int vehicleid);
+int OnVehicleDeath(int vehicleid, int killerid);
+int OnVehicleDamageStatusUpdate(int vehicleid, int playerid);
+int OnVehicleStreamIn(int vehicleid, int forplayerid);
+int OnVehicleStreamOut(int vehicleid, int forplayerid);
+int OnUnoccupiedVehicleUpdate(int vehicleid, int playerid, int passenger_seat);
+int OnVehicleMod(int playerid, int vehicleid, int componentid);
+int OnVehiclePaintjob(int playerid, int vehicleid, int paintjobid);
+int OnVehicleRespray(int playerid, int vehicleid, int color1, int color2);
+
+// --------------------------------------------------

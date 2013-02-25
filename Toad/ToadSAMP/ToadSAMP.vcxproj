@@ -93,8 +93,6 @@
     <ClCompile Include="ToadCallbacks.c" />
     <ClCompile Include="ToadCore.c" />
     <ClCompile Include="ToadFunctions.c" />
-    <ClCompile Include="ToadNPCCallbacks.c" />
-    <ClCompile Include="ToadNPCFunctions.c" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ToadAMX\ToadAMX.vcxproj">

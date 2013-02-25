@@ -5,6 +5,9 @@
 *
 */
 
+// --------------------------------------------------
+// Defines
+// --------------------------------------------------
 
 #define SPECIAL_ACTION_NONE				0
 #define SPECIAL_ACTION_DUCK				1
@@ -50,6 +53,39 @@
 #define WEAPONSTATE_LAST_BULLET			1
 #define WEAPONSTATE_MORE_BULLETS		2
 #define WEAPONSTATE_RELOADING			3
+
+// Recording for NPC playback
+#define PLAYER_RECORDING_TYPE_NONE		0
+#define PLAYER_RECORDING_TYPE_DRIVER	1
+#define PLAYER_RECORDING_TYPE_ONFOOT	2
+
+#define MAX_PLAYER_ATTACHED_OBJECTS 10 // This is the number of attached indexes available ie 10 = 0-9
+
+#define PLAYER_VARTYPE_NONE			0
+#define PLAYER_VARTYPE_INT			1
+#define PLAYER_VARTYPE_STRING		2
+#define PLAYER_VARTYPE_FLOAT		3
+
+#define MAX_CHATBUBBLE_LENGTH 144
+
+#define MAPICON_LOCAL			  0 // displays in the player's local are
+#define MAPICON_GLOBAL			  1 // displays always
+#define MAPICON_LOCAL_CHECKPOINT  2 // displays in the player's local area and has a checkpoint marker
+#define MAPICON_GLOBAL_CHECKPOINT 3 // displays always and has a checkpoint marker
+
+#define CAMERA_CUT	2
+#define CAMERA_MOVE 1
+
+#define SPECTATE_MODE_NORMAL	1
+#define SPECTATE_MODE_FIXED		2
+#define SPECTATE_MODE_SIDE		3
+
+typedef int PlayerText;
+typedef int Text;
+
+// --------------------------------------------------
+// Natives
+// --------------------------------------------------
 
 // Player
 int SetSpawnInfo(int playerid, int team, int skin, float x, float y, float z, float rotation, int weapon1, int weapon1_ammo, int weapon2, int weapon2_ammo, int weapon3, int weapon3_ammo);
@@ -119,16 +155,12 @@ int GetPlayerSurfingObjectID(int playerid);
 int RemoveBuildingForPlayer(int playerid, int modelid, float fX, float fY, float fZ, float fRadius);
 
 // Attached to bone objects
-
-#define MAX_PLAYER_ATTACHED_OBJECTS 10 // This is the number of attached indexes available ie 10 = 0-9
-
 int SetPlayerAttachedObject(int playerid, int index, int modelid, int bone, float fOffsetX, float fOffsetY, float fOffsetZ, float fRotX, float fRotY, float fRotZ, float fScaleX, float fScaleY, float fScaleZ, int materialcolor1, int materialcolor2);
 int RemovePlayerAttachedObject(int playerid, int index);
 int IsPlayerAttachedObjectSlotUsed(int playerid, int index);
 int EditAttachedObject(int playerid, int index);
 
 // Per-player TextDraws
-typedef int PlayerText;
 PlayerText CreatePlayerTextDraw(int playerid, float x, float y, char text[]);
 int PlayerTextDrawDestroy(int playerid, PlayerText text);
 int PlayerTextDrawLetterSize(int playerid, PlayerText text, float x, float y);
@@ -160,16 +192,9 @@ float GetPVarFloat(int playerid, char varname[]);
 int DeletePVar(int playerid, char varname[]);
 
 // PVar enumeration
-#define PLAYER_VARTYPE_NONE			0
-#define PLAYER_VARTYPE_INT			1
-#define PLAYER_VARTYPE_STRING		2
-#define PLAYER_VARTYPE_FLOAT		3
-
 int GetPVarsUpperIndex(int playerid);
 int GetPVarNameAtIndex(int playerid, int index, char ret_varname[], int ret_len);
 int GetPVarType(int playerid, char varname[]);
-
-#define MAX_CHATBUBBLE_LENGTH 144
 int SetPlayerChatBubble(int playerid, char text[], int color, float drawdistance, int expiretime);
 
 // Player controls
@@ -194,23 +219,12 @@ int DisablePlayerRaceCheckpoint(int playerid);
 int SetPlayerWorldBounds(int playerid, float x_max, float x_min, float y_max, float y_min);
 int SetPlayerMarkerForPlayer(int playerid, int showplayerid, int color);
 int ShowPlayerNameTagForPlayer(int playerid, int showplayerid, int show);
-
-#define MAPICON_LOCAL			  0 // displays in the player's local are
-#define MAPICON_GLOBAL			  1 // displays always
-#define MAPICON_LOCAL_CHECKPOINT  2 // displays in the player's local area and has a checkpoint marker
-#define MAPICON_GLOBAL_CHECKPOINT 3 // displays always and has a checkpoint marker
-
 int SetPlayerMapIcon(int playerid, int iconid, float x, float y, float z, int markertype, int color, int style);
 int RemovePlayerMapIcon(int playerid, int iconid);
-
 int AllowPlayerTeleport(int playerid, int allow);
 
 // Player camera
 int SetPlayerCameraPos(int playerid, float x, float y, float z);
-
-#define CAMERA_CUT	2
-#define CAMERA_MOVE 1
-
 int SetPlayerCameraLookAt(int playerid, float x, float y, float z, int cut);
 int SetCameraBehindPlayer(int playerid);
 int GetPlayerCameraPos(int playerid, float *x, float *y, float *z);
@@ -237,21 +251,54 @@ int EnableStuntBonusForPlayer(int playerid, int enable);
 int EnableStuntBonusForAll(int enable);
 
 // Spectating
-#define SPECTATE_MODE_NORMAL	1
-#define SPECTATE_MODE_FIXED		2
-#define SPECTATE_MODE_SIDE		3
-
 int TogglePlayerSpectating(int playerid, int toggle);
 int PlayerSpectatePlayer(int playerid, int targetplayerid, int mode);
 int PlayerSpectateVehicle(int playerid, int targetvehicleid, int mode);
-
-// Recording for NPC playback
-#define PLAYER_RECORDING_TYPE_NONE		0
-#define PLAYER_RECORDING_TYPE_DRIVER	1
-#define PLAYER_RECORDING_TYPE_ONFOOT	2
-
 int StartRecordingPlayerData(int playerid, int recordtype, char recordname[]);
 int StopRecordingPlayerData(int playerid);
-
+int ConnectNPC(char name[], char script[]);
+int IsPlayerNPC(int playerid);
 int SelectTextDraw(int playerid, int hovercolor); // enables the mouse so the player can select a textdraw
 int CancelSelectTextDraw(int playerid);	// cancel textdraw selection with the mouse
+
+// --------------------------------------------------
+// Forwards (Callback declarations)
+// --------------------------------------------------
+
+int OnPlayerConnect(int playerid);
+int OnPlayerDisconnect(int playerid, int reason);
+int OnPlayerSpawn(int playerid);
+int OnPlayerDeath(int playerid, int killerid, int reason);
+int OnPlayerText(int playerid, char text[]);
+int OnPlayerCommandText(int playerid, char cmdtext[]);
+int OnPlayerRequestClass(int playerid, int classid);
+int OnPlayerEnterVehicle(int playerid, int vehicleid, int ispassenger);
+int OnPlayerExitVehicle(int playerid, int vehicleid);
+int OnPlayerStateChange(int playerid, int newstate, int oldstate);
+int OnPlayerEnterCheckpoint(int playerid);
+int OnPlayerLeaveCheckpoint(int playerid);
+int OnPlayerEnterRaceCheckpoint(int playerid);
+int OnPlayerLeaveRaceCheckpoint(int playerid);
+int OnPlayerRequestSpawn(int playerid);
+int OnPlayerObjectMoved(int playerid, int objectid);
+int OnPlayerPickUpPickup(int playerid, int pickupid);
+int OnPlayerSelectedMenuRow(int playerid, int row);
+int OnPlayerExitedMenu(int playerid);
+int OnPlayerInteriorChange(int playerid, int newinteriorid, int oldinteriorid);
+int OnPlayerKeyStateChange(int playerid, int newkeys, int oldkeys);
+int OnPlayerUpdate(int playerid);
+int OnPlayerStreamIn(int playerid, int forplayerid);
+int OnPlayerStreamOut(int playerid, int forplayerid);
+int OnPlayerTakeDamage(int playerid, int issuerid, float amount, int weaponid);
+int OnPlayerGiveDamage(int playerid, int damagedid, float amount, int weaponid);
+int OnPlayerClickMap(int playerid, float fX, float fY, float fZ);
+int OnPlayerClickTextDraw(int playerid, Text clickedid);
+int OnPlayerClickPlayerTextDraw(int playerid, PlayerText playertextid);
+int OnPlayerClickPlayer(int playerid, int clickedplayerid, int source);
+int OnPlayerEditObject(int playerid, int playerobject, int objectid, int response, float fX, float fY, float fZ, float fRotX, float fRotY, float fRotZ );
+int OnPlayerEditAttachedObject(int playerid, int response, int index, int modelid, int boneid, float fOffsetX, float fOffsetY, float fOffsetZ, float fRotX, float fRotY, float fRotZ, float fScaleX, float fScaleY, float fScaleZ);
+int OnPlayerSelectObject(int playerid, int type, int objectid, int modelid, float fX, float fY, float fZ);
+int OnEnterExitModShop(int playerid, int enterexit, int interiorid);
+int OnDialogResponse(int playerid, int dialogid, int response, int listitem, char inputtext[]);
+
+// --------------------------------------------------

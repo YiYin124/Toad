@@ -18,9 +18,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="a_npc.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="a_objects.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -42,6 +39,9 @@
     <ClInclude Include="a_toad.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="a_npc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ToadCore.c">
@@ -51,12 +51,6 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ToadCallbacks.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ToadNPCFunctions.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="ToadNPCCallbacks.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
