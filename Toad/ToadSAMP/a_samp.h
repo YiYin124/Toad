@@ -164,10 +164,10 @@ int GameTextForAll(const char string[], int time, int style);
 int GameTextForPlayer(int playerid, const char string[], int time, int style);
 int GetTickCount();
 int GetMaxPlayers();
-float asin(float value);
-float acos(float value);
-float atan(float value);
-float atan2(float x, float y);
+//float asin(float value);
+//float acos(float value);
+//float atan(float value);
+//float atan2(float x, float y);
 
 // Game
 int SetGameModeText(const char string[]);

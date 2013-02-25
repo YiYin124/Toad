@@ -353,10 +353,6 @@ void OnProcessTick() {}
 
 int OnGameModeExit() { return 0; }
 
-int OnFilterScriptInit() { return 0; }
-
-int OnFilterScriptExit() { return 0; }
-
 //int OnPlayerConnect(int playerid) { return 0; }
 
 int OnPlayerDisconnect(int playerid, int reason) { return 0; }

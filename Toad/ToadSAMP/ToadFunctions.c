@@ -63,26 +63,26 @@ int GetMaxPlayers()
 	return amx_CallNativeFunc(gAMX, __FUNCTION__, "");
 }
 
-float asin(float value)
-{
-	cell rval = amx_CallNativeFunc(gAMX, __FUNCTION__, "f", value);
-	return amx_ctof(rval);
-}
-float acos(float value)
-{
-	cell rval = amx_CallNativeFunc(gAMX, __FUNCTION__, "f", value);
-	return amx_ctof(rval);
-}
-float atan(float value)
-{
-	cell rval = amx_CallNativeFunc(gAMX, __FUNCTION__, "f", value);
-	return amx_ctof(rval);
-}
-float atan2(float x, float y)
-{
-	cell rval = amx_CallNativeFunc(gAMX, __FUNCTION__, "ff", x, y);
-	return amx_ctof(rval);
-}
+//float asin(float value)
+//{
+//	cell rval = amx_CallNativeFunc(gAMX, __FUNCTION__, "f", value);
+//	return amx_ctof(rval);
+//}
+//float acos(float value)
+//{
+//	cell rval = amx_CallNativeFunc(gAMX, __FUNCTION__, "f", value);
+//	return amx_ctof(rval);
+//}
+//float atan(float value)
+//{
+//	cell rval = amx_CallNativeFunc(gAMX, __FUNCTION__, "f", value);
+//	return amx_ctof(rval);
+//}
+//float atan2(float x, float y)
+//{
+//	cell rval = amx_CallNativeFunc(gAMX, __FUNCTION__, "ff", x, y);
+//	return amx_ctof(rval);
+//}
 
 // Game
 int SetGameModeText(const char string[])
