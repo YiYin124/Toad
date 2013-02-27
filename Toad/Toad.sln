@@ -1,19 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToadSAMP", "ToadSAMP\ToadSAMP.vcxproj", "{D854E0BD-401B-4153-977A-9A03F97F731B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SAMP_Wrapper", "SAMP_Wrapper\SAMP_Wrapper.vcxproj", "{0307C7E1-04ED-46A8-90B9-48C346E5CF9E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CToad Example", "CToad Example", "{20DD8F67-2F52-4C6D-BAAB-C94674F639F2}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rivershell-Example", "rivershell-Example\rivershell-Example.vcxproj", "{054DAB59-F191-4A0F-8F32-75C457ECC85C}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External dependencies", "External dependencies", "{47ABECE1-FACA-4B4A-B9FD-E53424F4B336}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samp", "samp", "{2E571B32-49ED-4EE9-AD2F-50CC8F4209BF}"
-	ProjectSection(SolutionItems) = preProject
-		External dependencies\Pawn\ToadFS.pwn = External dependencies\Pawn\ToadFS.pwn
-		External dependencies\Pawn\ToadGM.pwn = External dependencies\Pawn\ToadGM.pwn
-	EndProjectSection
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Example_rivershell", "Example_rivershell\Example_rivershell.vcxproj", "{09CE63A6-1191-4EA5-9F7D-B313A29308DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,20 +11,16 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D854E0BD-401B-4153-977A-9A03F97F731B}.Debug|Win32.ActiveCfg = Debug|Win32
-		{D854E0BD-401B-4153-977A-9A03F97F731B}.Debug|Win32.Build.0 = Debug|Win32
-		{D854E0BD-401B-4153-977A-9A03F97F731B}.Release|Win32.ActiveCfg = Release|Win32
-		{D854E0BD-401B-4153-977A-9A03F97F731B}.Release|Win32.Build.0 = Release|Win32
-		{054DAB59-F191-4A0F-8F32-75C457ECC85C}.Debug|Win32.ActiveCfg = Debug|Win32
-		{054DAB59-F191-4A0F-8F32-75C457ECC85C}.Debug|Win32.Build.0 = Debug|Win32
-		{054DAB59-F191-4A0F-8F32-75C457ECC85C}.Release|Win32.ActiveCfg = Release|Win32
-		{054DAB59-F191-4A0F-8F32-75C457ECC85C}.Release|Win32.Build.0 = Release|Win32
+		{0307C7E1-04ED-46A8-90B9-48C346E5CF9E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0307C7E1-04ED-46A8-90B9-48C346E5CF9E}.Debug|Win32.Build.0 = Debug|Win32
+		{0307C7E1-04ED-46A8-90B9-48C346E5CF9E}.Release|Win32.ActiveCfg = Release|Win32
+		{0307C7E1-04ED-46A8-90B9-48C346E5CF9E}.Release|Win32.Build.0 = Release|Win32
+		{09CE63A6-1191-4EA5-9F7D-B313A29308DD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{09CE63A6-1191-4EA5-9F7D-B313A29308DD}.Debug|Win32.Build.0 = Debug|Win32
+		{09CE63A6-1191-4EA5-9F7D-B313A29308DD}.Release|Win32.ActiveCfg = Release|Win32
+		{09CE63A6-1191-4EA5-9F7D-B313A29308DD}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{054DAB59-F191-4A0F-8F32-75C457ECC85C} = {20DD8F67-2F52-4C6D-BAAB-C94674F639F2}
-		{2E571B32-49ED-4EE9-AD2F-50CC8F4209BF} = {47ABECE1-FACA-4B4A-B9FD-E53424F4B336}
 	EndGlobalSection
 EndGlobal
