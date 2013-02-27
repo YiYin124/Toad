@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToadAMX", "ToadAMX\ToadAMX.vcxproj", "{D5BFCAA3-EB77-4BBB-8EA7-53F92A746C4D}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ToadSAMP", "ToadSAMP\ToadSAMP.vcxproj", "{D854E0BD-401B-4153-977A-9A03F97F731B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CToad Example", "CToad Example", "{20DD8F67-2F52-4C6D-BAAB-C94674F639F2}"
@@ -23,10 +21,6 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D5BFCAA3-EB77-4BBB-8EA7-53F92A746C4D}.Debug|Win32.ActiveCfg = Debug|Win32
-		{D5BFCAA3-EB77-4BBB-8EA7-53F92A746C4D}.Debug|Win32.Build.0 = Debug|Win32
-		{D5BFCAA3-EB77-4BBB-8EA7-53F92A746C4D}.Release|Win32.ActiveCfg = Release|Win32
-		{D5BFCAA3-EB77-4BBB-8EA7-53F92A746C4D}.Release|Win32.Build.0 = Release|Win32
 		{D854E0BD-401B-4153-977A-9A03F97F731B}.Debug|Win32.ActiveCfg = Debug|Win32
 		{D854E0BD-401B-4153-977A-9A03F97F731B}.Debug|Win32.Build.0 = Debug|Win32
 		{D854E0BD-401B-4153-977A-9A03F97F731B}.Release|Win32.ActiveCfg = Release|Win32

@@ -13,49 +13,85 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="头文件\samp">
+      <UniqueIdentifier>{cd0a834a-4165-488e-91a4-8a56b2d8f585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\core">
+      <UniqueIdentifier>{ae1847b7-3693-46d2-a19e-2991b74a9787}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\core">
+      <UniqueIdentifier>{42539620-b076-4abc-a4a2-6647ec659df8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\core\samp">
+      <UniqueIdentifier>{0242cd6f-2cd1-47c4-82ba-b8f4f1092ac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\core\amx">
+      <UniqueIdentifier>{cd47eae2-eba4-4522-97ec-3e731c83a037}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="a_objects.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="npc.h">
+      <Filter>头文件\samp</Filter>
     </ClInclude>
-    <ClInclude Include="a_players.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="objects.h">
+      <Filter>头文件\samp</Filter>
     </ClInclude>
-    <ClInclude Include="a_samp.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="players.h">
+      <Filter>头文件\samp</Filter>
     </ClInclude>
-    <ClInclude Include="a_sampdb.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="samp.h">
+      <Filter>头文件\samp</Filter>
     </ClInclude>
-    <ClInclude Include="a_vehicles.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="sampdb.h">
+      <Filter>头文件\samp</Filter>
     </ClInclude>
-    <ClInclude Include="toadSAMP.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="vehicles.h">
+      <Filter>头文件\samp</Filter>
     </ClInclude>
-    <ClInclude Include="a_toad.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="define.h">
+      <Filter>头文件\samp</Filter>
     </ClInclude>
-    <ClInclude Include="a_npc.h">
-      <Filter>头文件</Filter>
+    <ClInclude Include="amx.h">
+      <Filter>头文件\core\amx</Filter>
+    </ClInclude>
+    <ClInclude Include="getch.h">
+      <Filter>头文件\core\amx</Filter>
+    </ClInclude>
+    <ClInclude Include="sclinux.h">
+      <Filter>头文件\core\amx</Filter>
+    </ClInclude>
+    <ClInclude Include="amxsamp.h">
+      <Filter>头文件\core\samp</Filter>
+    </ClInclude>
+    <ClInclude Include="plugincommon.h">
+      <Filter>头文件\core\samp</Filter>
+    </ClInclude>
+    <ClInclude Include="core.h">
+      <Filter>头文件\samp</Filter>
+    </ClInclude>
+    <ClInclude Include="amxex.c">
+      <Filter>源文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="amxplugin.c">
+      <Filter>源文件\core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ToadCore.c">
+    <ClCompile Include="callback.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ToadFunctions.c">
+    <ClCompile Include="function.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="ToadCallbacks.c">
-      <Filter>源文件</Filter>
+    <ClCompile Include="amxcore.c">
+      <Filter>源文件\core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ToadSAMP.def">
+    <None Include="exports.def">
       <Filter>源文件</Filter>
     </None>
   </ItemGroup>

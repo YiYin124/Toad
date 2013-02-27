@@ -6,7 +6,7 @@
 //
 //---------------------------------------------------------
 
-#include "../ToadSAMP/a_samp.h"
+#include "../ToadSAMP/samp.h"
 
 // Global stuff and defines for our gamemode.
 
@@ -41,9 +41,9 @@ void PlaySoundForAll(int soundid, float x, float y, float z);
 
 int OnLoadPlugin()
 {
-	printfln("\n----------------------------------");
-	printfln("  Rivershell by Kye 2006\n");
-	printfln("----------------------------------\n");
+	//printfln("\n----------------------------------");
+	//printfln("  Rivershell by Kye 2006\n");
+	//printfln("----------------------------------\n");
 	return 1;
 }
 //---------------------------------------------------------

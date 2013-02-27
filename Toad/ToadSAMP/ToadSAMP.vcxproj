@@ -42,8 +42,6 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -52,7 +50,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ModuleDefinitionFile>ToadSAMP.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
     </Link>
     <Bscmake>
       <PreserveSbr>true</PreserveSbr>
@@ -61,8 +59,6 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -73,34 +69,36 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>ToadSAMP.def</ModuleDefinitionFile>
+      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="a_npc.h" />
-    <ClInclude Include="a_objects.h" />
-    <ClInclude Include="a_players.h" />
-    <ClInclude Include="a_samp.h" />
-    <ClInclude Include="a_sampdb.h" />
-    <ClInclude Include="a_toad.h" />
-    <ClInclude Include="a_vehicles.h" />
-    <ClInclude Include="toadSAMP.h" />
+    <ClInclude Include="amx.h" />
+    <ClInclude Include="amxex.c" />
+    <ClInclude Include="amxplugin.c" />
+    <ClInclude Include="getch.h" />
+    <ClInclude Include="npc.h" />
+    <ClInclude Include="objects.h" />
+    <ClInclude Include="players.h" />
+    <ClInclude Include="plugincommon.h" />
+    <ClInclude Include="samp.h" />
+    <ClInclude Include="sampdb.h" />
+    <ClInclude Include="core.h" />
+    <ClInclude Include="sclinux.h" />
+    <ClInclude Include="vehicles.h" />
+    <ClInclude Include="define.h" />
+    <ClInclude Include="amxsamp.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ToadCallbacks.c" />
-    <ClCompile Include="ToadCore.c" />
-    <ClCompile Include="ToadFunctions.c" />
+    <ClCompile Include="callback.c" />
+    <ClCompile Include="amxcore.c" />
+    <ClCompile Include="function.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ToadAMX\ToadAMX.vcxproj">
-      <Project>{d5bfcaa3-eb77-4bbb-8ea7-53f92a746c4d}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ToadSAMP.def" />
+    <None Include="exports.def" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
