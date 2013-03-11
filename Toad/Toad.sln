@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SAMP_Wrapper", "SAMP_Wrappe
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Example_rivershell", "Example_rivershell\Example_rivershell.vcxproj", "{09CE63A6-1191-4EA5-9F7D-B313A29308DD}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Y_List", "Y_List\Y_List.vcxproj", "{53B1C614-CD29-46E6-BB7F-768BC407EDC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -19,6 +21,10 @@ Global
 		{09CE63A6-1191-4EA5-9F7D-B313A29308DD}.Debug|Win32.Build.0 = Debug|Win32
 		{09CE63A6-1191-4EA5-9F7D-B313A29308DD}.Release|Win32.ActiveCfg = Release|Win32
 		{09CE63A6-1191-4EA5-9F7D-B313A29308DD}.Release|Win32.Build.0 = Release|Win32
+		{53B1C614-CD29-46E6-BB7F-768BC407EDC5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{53B1C614-CD29-46E6-BB7F-768BC407EDC5}.Debug|Win32.Build.0 = Debug|Win32
+		{53B1C614-CD29-46E6-BB7F-768BC407EDC5}.Release|Win32.ActiveCfg = Release|Win32
+		{53B1C614-CD29-46E6-BB7F-768BC407EDC5}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

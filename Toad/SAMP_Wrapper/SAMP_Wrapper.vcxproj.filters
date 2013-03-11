@@ -25,6 +25,12 @@
     <Filter Include="源文件\samp">
       <UniqueIdentifier>{0b79a117-9ff2-4e61-bd44-9d1c5b675b55}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\samp\wrapper">
+      <UniqueIdentifier>{09be0ac9-b602-40e9-8ff8-57688f21ef70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\samp\event">
+      <UniqueIdentifier>{bfe93d7b-7147-4aa6-9f5d-dba7c2db34f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -69,6 +75,9 @@
     <ClInclude Include="vehicles.h">
       <Filter>头文件\samp</Filter>
     </ClInclude>
+    <ClInclude Include="event.h">
+      <Filter>头文件\samp</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="amxcore.c">
@@ -81,10 +90,13 @@
       <Filter>源文件\core</Filter>
     </ClCompile>
     <ClCompile Include="callback.c">
-      <Filter>源文件\samp</Filter>
+      <Filter>源文件\samp\wrapper</Filter>
     </ClCompile>
     <ClCompile Include="function.c">
-      <Filter>源文件\samp</Filter>
+      <Filter>源文件\samp\wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="event.c">
+      <Filter>源文件\samp\event</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

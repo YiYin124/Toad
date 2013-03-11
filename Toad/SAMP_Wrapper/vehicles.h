@@ -1,4 +1,3 @@
-#pragma once
 /*  SA-MP Vehicle Functions
 *
 *  (c) Copyright 2005-2012, SA-MP Team
@@ -8,6 +7,8 @@
 // --------------------------------------------------
 // Natives
 // --------------------------------------------------
+
+#pragma once
 
 // Vehicle
 int CreateVehicle(int vehicletype, float x, float y, float z, float rotation, int color1, int color2, int respawn_delay);

@@ -1,9 +1,10 @@
-#pragma once
 /*  SA-MP Player Functions
 *
 *  (c) Copyright 2005-2012, SA-MP Team
 *
 */
+
+#pragma once
 
 // --------------------------------------------------
 // Natives

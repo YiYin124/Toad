@@ -1,4 +1,3 @@
-#pragma once
 /*  SA-MP Functions
 *
 *  (c) Copyright 2005-2012, SA-MP Team
@@ -8,6 +7,8 @@
 // --------------------------------------------------
 // Natives
 // --------------------------------------------------
+
+#pragma once
 
 // Util
 int println(const char string[]);

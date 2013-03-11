@@ -1,3 +1,10 @@
+/**
+* Copyright (C) 2013 YiYin
+* This library is free software; you can redistribute it and/or
+* modify it under the terms of the GNU Lesser General Public
+* version 3.0 of the License as published by the Free Software Foundation.
+*/
+
 #pragma once
 
 #define CARMODTYPE_SPOILER		0
@@ -263,3 +270,176 @@ typedef int DBResult;
 #include "objects.h"
 #include "sampdb.h"
 #include "core.h"
+
+// 事件注册机制
+
+#define EVENT_NULL	0xFFFFFFFF
+
+// 事件类型
+typedef enum
+{
+	EVENT_RCON_COMMAND,
+	EVENT_GAMEMODE_INIT,
+	EVENT_GAMEMODE_EXIT,
+	EVENT_PLAYER_CONNECT,
+	EVENT_PLAYER_DISCONNECT,
+	EVENT_PLAYER_SPAWN,
+	EVENT_PLAYER_DEATH,
+	EVENT_VEHICLE_SPAWN,
+	EVENT_VEHICLE_DEATH,
+	EVENT_PLAYER_TEXT,
+	EVENT_PLAYER_COMMAND_TEXT,
+	EVENT_PLAYER_REQUEST_CLASS,
+	EVENT_PLAYER_ENTER_VEHICLE,
+	EVENT_PLAYER_EXIT_VEHICLE,
+	EVENT_PLAYER_STATE_CHANGE,
+	EVENT_PLAYER_ENTER_CHECKPOINT,
+	EVENT_PLAYER_LEAVE_CHECKPOINT,
+	EVENT_PLAYER_ENTER_RACE_CHECKPOINT,
+	EVENT_PLAYER_LEAVE_RACE_CHECKPOINT,
+	EVENT_PLAYER_REQUEST_SPAWN,
+	EVENT_OBJECT_MOVED,
+	EVENT_PLAYER_OBJECT_MOVED,
+	EVENT_PLAYER_PICK_UP_PICKUP,
+	EVENT_VEHICLE_MOD,
+	EVENT_ENTER_EXIT_MOD_SHOP,
+	EVENT_VEHICLE_PAINTJOB,
+	EVENT_VEHICLE_RESPRAY,
+	EVENT_VEHICLE_DAMAGE_STATUS_UPDATE,
+	EVENT_UNOCCUPIED_VEHICLE_UPDATE,
+	EVENT_PLAYER_SELECTED_MENU_ROW,
+	EVENT_PLAYER_EXITED_MENU,
+	EVENT_PLAYER_INTERIOR_CHANGE,
+	EVENT_PLAYER_KEY_STATE_CHANGE,
+	EVENT_RCON_LOGIN_ATTEMPT,
+	EVENT_PLAYER_UPDATE,
+	EVENT_PLAYER_STREAM_IN,
+	EVENT_PLAYER_STREAM_OUT,
+	EVENT_VEHICLE_STREAM_IN,
+	EVENT_VEHICLE_STREAM_OUT,
+	EVENT_DIALOG_RESPONSE,
+	EVENT_PLAYER_TAKE_DAMAGE,
+	EVENT_PLAYER_GIVE_DAMAGE,
+	EVENT_PLAYER_CLICK_MAP,
+	EVENT_PLAYER_CLICK_TEXT_DRAW,
+	EVENT_PLAYER_CLICK_PLAYER_TEXT_DRAW,
+	EVENT_PLAYER_CLICK_PLAYER,
+	EVENT_PLAYER_EDIT_OBJECT,
+	EVENT_PLAYER_EDIT_ATTACHED_OBJECT,
+	EVENT_PLAYER_SELECT_OBJECT,
+	EVENT_NPC_CONNECT,
+	EVENT_NPC_DISCONNECT,
+	EVENT_NPC_SPAWN,
+	EVENT_NPC_DEATH,
+	EVENT_NPC_TEXT,
+	EVENT_NPC_ENTER_VEHICLE,
+	EVENT_NPC_EXIT_VEHICLE,
+	EVENT_NPC_STATE_CHANGE,
+	EVENT_NPC_ENTER_CHECKPOINT,
+	EVENT_NPC_LEAVE_CHECKPOINT,
+	EVENT_NPC_ENTER_RACE_CHECKPOINT,
+	EVENT_NPC_LEAVE_RACE_CHECKPOINT,
+	EVENT_NPC_OBJECT_MOVED,
+	EVENT_NPC_PICK_UP_PICKUP,
+	EVENT_NPC_INTERIOR_CHANGE,
+	EVENT_NPC_UPDATE,
+	EVENT_NPC_STREAM_IN,
+	EVENT_NPC_STREAM_OUT,
+	EVENT_NPC_TAKE_DAMAGE,
+	EVENT_NPC_GIVE_DAMAGE,
+} EVENT_TYPE;
+
+typedef enum
+{
+	EVENT_P_HIGH,
+	EVENT_P_NORMAL,
+	EVENT_P_LOW,
+} EVENT_PRIORITY;
+
+typedef struct BaseNPCConnect{ int npcid; } BaseNPCConnect;
+typedef struct BaseNPCDisconnect{ int npcid; int reason; } BaseNPCDisconnect;
+typedef struct BaseNPCSpawn{ int npcid; } BaseNPCSpawn;
+typedef struct BaseNPCDeath{ int npcid; int killerid; int reason; } BaseNPCDeath;
+typedef struct BaseNPCText{ int npcid; char *text; } BaseNPCText;
+typedef struct BaseNPCEnterVehicle{ int npcid; int vehicleid; int ispassenger; } BaseNPCEnterVehicle;
+typedef struct BaseNPCExitVehicle{ int npcid; int vehicleid; } BaseNPCExitVehicle;
+typedef struct BaseNPCStateChange{ int npcid; int newstate; int oldstate; } BaseNPCStateChange;
+typedef struct BaseNPCEnterCheckpoint{ int npcid; } BaseNPCEnterCheckpoint;
+typedef struct BaseNPCLeaveCheckpoint{ int npcid; } BaseNPCLeaveCheckpoint;
+typedef struct BaseNPCEnterRaceCheckpoint{ int npcid; } BaseNPCEnterRaceCheckpoint;
+typedef struct BaseNPCLeaveRaceCheckpoint{ int npcid; } BaseNPCLeaveRaceCheckpoint;
+typedef struct BaseNPCObjectMoved{ int npcid; int objectid; } BaseNPCObjectMoved;
+typedef struct BaseNPCPickUpPickup{ int npcid; int pickupid; } BaseNPCPickUpPickup;
+typedef struct BaseNPCInteriorChange{ int npcid; int newinteriorid; int oldinteriorid; } BaseNPCInteriorChange;
+typedef struct BaseNPCUpdate{ int npcid; } BaseNPCUpdate;
+typedef struct BaseNPCStreamIn{ int npcid; int forplayerid; } BaseNPCStreamIn;
+typedef struct BaseNPCStreamOut{ int npcid; int forplayerid; } BaseNPCStreamOut;
+typedef struct BaseNPCTakeDamage{ int npcid; int issuerid; float amount; int weaponid; } BaseNPCTakeDamage;
+typedef struct BaseNPCGiveDamage{ int npcid; int damagedid; float amount; int weaponid; } BaseNPCGiveDamage;
+typedef struct BaseObjectMoved{ int objectid; } BaseObjectMoved;
+typedef struct BasePlayerConnect{ int playerid; } BasePlayerConnect;
+typedef struct BasePlayerDisconnect{ int playerid; int reason; } BasePlayerDisconnect;
+typedef struct BasePlayerSpawn{ int playerid; } BasePlayerSpawn;
+typedef struct BasePlayerDeath{ int playerid; int killerid; int reason; } BasePlayerDeath;
+typedef struct BasePlayerText{ int playerid; char *text; } BasePlayerText;
+typedef struct BasePlayerCommandText{ int playerid; char *cmdtext; } BasePlayerCommandText;
+typedef struct BasePlayerRequestClass{ int playerid; int classid; } BasePlayerRequestClass;
+typedef struct BasePlayerEnterVehicle{ int playerid; int vehicleid; int ispassenger; } BasePlayerEnterVehicle;
+typedef struct BasePlayerExitVehicle{ int playerid; int vehicleid; } BasePlayerExitVehicle;
+typedef struct BasePlayerStateChange{ int playerid; int newstate; int oldstate; } BasePlayerStateChange;
+typedef struct BasePlayerEnterCheckpoint{ int playerid; } BasePlayerEnterCheckpoint;
+typedef struct BasePlayerLeaveCheckpoint{ int playerid; } BasePlayerLeaveCheckpoint;
+typedef struct BasePlayerEnterRaceCheckpoint{ int playerid; } BasePlayerEnterRaceCheckpoint;
+typedef struct BasePlayerLeaveRaceCheckpoint{ int playerid; } BasePlayerLeaveRaceCheckpoint;
+typedef struct BasePlayerRequestSpawn{ int playerid; } BasePlayerRequestSpawn;
+typedef struct BasePlayerObjectMoved{ int playerid; int objectid; } BasePlayerObjectMoved;
+typedef struct BasePlayerPickUpPickup{ int playerid; int pickupid; } BasePlayerPickUpPickup;
+typedef struct BasePlayerSelectedMenuRow{ int playerid; int row; } BasePlayerSelectedMenuRow;
+typedef struct BasePlayerExitedMenu{ int playerid; } BasePlayerExitedMenu;
+typedef struct BasePlayerInteriorChange{ int playerid; int newinteriorid; int oldinteriorid; } BasePlayerInteriorChange;
+typedef struct BasePlayerKeyStateChange{ int playerid; int newkeys; int oldkeys; } BasePlayerKeyStateChange;
+typedef struct BasePlayerUpdate{ int playerid; } BasePlayerUpdate;
+typedef struct BasePlayerStreamIn{ int playerid; int forplayerid; } BasePlayerStreamIn;
+typedef struct BasePlayerStreamOut{ int playerid; int forplayerid; } BasePlayerStreamOut;
+typedef struct BasePlayerTakeDamage{ int playerid; int issuerid; float amount; int weaponid; } BasePlayerTakeDamage;
+typedef struct BasePlayerGiveDamage{ int playerid; int damagedid; float amount; int weaponid; } BasePlayerGiveDamage;
+typedef struct BasePlayerClickMap{ int playerid; float fX; float fY; float fZ; } BasePlayerClickMap;
+typedef struct BasePlayerClickTextDraw{ int playerid; Text clickedid; } BasePlayerClickTextDraw;
+typedef struct BasePlayerClickPlayerTextDraw{ int playerid; PlayerText playertextid; } BasePlayerClickPlayerTextDraw;
+typedef struct BasePlayerClickPlayer{ int playerid; int clickedplayerid; int source; } BasePlayerClickPlayer;
+typedef struct BasePlayerEditObject{ int playerid; int playerobject; int objectid; int response; float fX; float fY; float fZ; float fRotX; float fRotY; float fRotZ; } BasePlayerEditObject;
+typedef struct BasePlayerEditAttachedObject{ int playerid; int response; int index; int modelid; int boneid; float fOffsetX; float fOffsetY; float fOffsetZ; float fRotX; float fRotY; float fRotZ; float fScaleX; float fScaleY; float fScaleZ; } BasePlayerEditAttachedObject;
+typedef struct BasePlayerSelectObject{ int playerid; int type; int objectid; int modelid; float fX; float fY; float fZ; } BasePlayerSelectObject;
+typedef struct BaseEnterExitModShop{ int playerid; int enterexit; int interiorid; } BaseEnterExitModShop;
+typedef struct BaseDialogResponse{ int playerid; int dialogid; int response; int listitem; char *inputtext; } BaseDialogResponse;
+// typedef struct BaseGameModeInit{ } ;
+// typedef struct BaseGameModeExit{ } ;
+typedef struct BaseRconCommand{ char *cmd; } BaseRconCommand;
+typedef struct BaseRconLoginAttempt{ char *ip; char *password; int success; } BaseRconLoginAttempt;
+typedef struct BaseVehicleSpawn{ int vehicleid; } BaseVehicleSpawn;
+typedef struct BaseVehicleDeath{ int vehicleid; int killerid; } BaseVehicleDeath;
+typedef struct BaseVehicleDamageStatusUpdate{ int vehicleid; int playerid; } BaseVehicleDamageStatusUpdate;
+typedef struct BaseVehicleStreamIn{ int vehicleid; int forplayerid; } BaseVehicleStreamIn;
+typedef struct BaseVehicleStreamOut{ int vehicleid; int forplayerid; } BaseVehicleStreamOut;
+typedef struct BaseUnoccupiedVehicleUpdate{ int vehicleid; int playerid; int passenger_seat; } BaseUnoccupiedVehicleUpdate;
+typedef struct BaseVehicleMod{ int playerid; int vehicleid; int componentid; } BaseVehicleMod;
+typedef struct BaseVehiclePaintjob{ int playerid; int vehicleid; int paintjobid; } BaseVehiclePaintjob;
+typedef struct BaseVehicleRespray{ int playerid; int vehicleid; int color1; int color2; } BaseVehicleRespray;
+
+typedef union Base
+{
+	BaseRconCommand BaseRconCommand;
+} Base;
+
+typedef void (*EVENT_FUNCTION)(Base base); // base 事件源参数
+typedef unsigned int EVENT_HANDLE; // 事件句柄
+
+typedef struct
+{
+	EVENT_FUNCTION func; // 事件委托
+	unsigned int eventID; // 事件ID 既访问句柄
+} EVENT;
+
+
+
+#include "event.h"

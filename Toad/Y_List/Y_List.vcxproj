@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0307C7E1-04ED-46A8-90B9-48C346E5CF9E}</ProjectGuid>
+    <ProjectGuid>{53B1C614-CD29-46E6-BB7F-768BC407EDC5}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SAMP_Wrapper</RootNamespace>
+    <RootNamespace>Y_List</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -51,12 +51,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
     </Link>
-    <Lib>
-      <ModuleDefinitionFile>
-      </ModuleDefinitionFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -73,47 +68,16 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ModuleDefinitionFile>exports.def</ModuleDefinitionFile>
     </Link>
-    <Lib>
-      <ModuleDefinitionFile>
-      </ModuleDefinitionFile>
-    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="amx.h" />
-    <ClInclude Include="amxsamp.h" />
-    <ClInclude Include="core.h" />
-    <ClInclude Include="event.h" />
-    <ClInclude Include="getch.h" />
-    <ClInclude Include="npc.h" />
-    <ClInclude Include="objects.h" />
-    <ClInclude Include="players.h" />
-    <ClInclude Include="plugincommon.h" />
-    <ClInclude Include="samp.h" />
-    <ClInclude Include="sampdb.h" />
-    <ClInclude Include="sclinux.h" />
-    <ClInclude Include="server.h" />
-    <ClInclude Include="vehicles.h" />
+    <ClCompile Include="y_list.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="amxcore.c" />
-    <ClCompile Include="amxex.c" />
-    <ClCompile Include="amxplugin.c" />
-    <ClCompile Include="callback.c" />
-    <ClCompile Include="event.c" />
-    <ClCompile Include="function.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="exports.def" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Y_List\Y_List.vcxproj">
-      <Project>{53b1c614-cd29-46e6-bb7f-768bc407edc5}</Project>
-    </ProjectReference>
+    <ClInclude Include="y_list.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

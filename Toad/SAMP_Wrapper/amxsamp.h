@@ -8,9 +8,7 @@
 #pragma once
 
 #include "amx.h"
-#include "getch.h"
 #include "plugincommon.h"
-//#include "sclinux.h"
 
 
 extern AMX *gAMX;

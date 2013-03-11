@@ -7,6 +7,8 @@
 //---------------------------------------------------------
 
 #include "../SAMP_Wrapper/samp.h"
+#include "stdio.h"
+#include "string.h"
 
 // Global stuff and defines for our gamemode.
 
@@ -37,10 +39,62 @@ void ExitTheGameMode();
 
 //C make
 void PlaySoundForAll(int soundid, float x, float y, float z);
+
+EVENT_HANDLE RconEvent[4];
+
+void TestOnRconCommand(Base base)
+{
+	sampprintf("CMD 0: %s", base.BaseRconCommand.cmd);
+
+	if (strcmp(base.BaseRconCommand.cmd, "/d1") == 0)
+	{
+		CancelEvent(RconEvent[0]);
+		return;
+	}
+
+	if (strcmp(base.BaseRconCommand.cmd, "/d2") == 0)
+	{
+		CancelEvent(RconEvent[1]);
+		return;
+	}
+
+	if (strcmp(base.BaseRconCommand.cmd, "/d3") == 0)
+	{
+		CancelEvent(RconEvent[2]);
+		return;
+	}
+
+	if (strcmp(base.BaseRconCommand.cmd, "/d4") == 0)
+	{
+		CancelEvent(RconEvent[3]);
+		return;
+	}
+}
+
+void Test1OnRconCommand(Base base)
+{
+	sampprintf("CMD 1: %s", base.BaseRconCommand.cmd);
+}
+
+void Test2OnRconCommand(Base base)
+{
+	sampprintf("CMD 2: %s", base.BaseRconCommand.cmd);
+}
+
+void Test3OnRconCommand(Base base)
+{
+	sampprintf("CMD 3: %s", base.BaseRconCommand.cmd);
+}
+
 //---------------------------------------------------------
 
 int OnLoadPlugin()
 {
+	RconEvent[0] = RegisterEvent(EVENT_RCON_COMMAND, TestOnRconCommand, EVENT_P_HIGH);
+	RconEvent[1] = RegisterEvent(EVENT_RCON_COMMAND, Test1OnRconCommand, EVENT_P_HIGH);
+	RconEvent[2] = RegisterEvent(EVENT_RCON_COMMAND, Test2OnRconCommand, EVENT_P_HIGH);
+	RconEvent[3] = RegisterEvent(EVENT_RCON_COMMAND, Test3OnRconCommand, EVENT_P_HIGH);
+
 	sampprintf("\n----------------------------------");
 	sampprintf("  Rivershell by Kye 2006\n");
 	sampprintf("----------------------------------\n");
@@ -385,7 +439,7 @@ int OnPlayerEnterRaceCheckpoint(int playerid) { return 0; }
 
 int OnPlayerLeaveRaceCheckpoint(int playerid) { return 0; }
 
-int OnRconCommand(char cmd[]) { return 0; }
+int OnRconCommand(char cmd[]) { return 1; }
 
 int OnPlayerRequestSpawn(int playerid) { return 0; }
 

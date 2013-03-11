@@ -7,6 +7,9 @@
 
 #include "amxsamp.h"
 #include "core.h"
+#include "../Y_List/y_list.h"
+
+extern int InitEventPool();
 
 AMX *gAMX = NULL;
 
@@ -21,6 +24,10 @@ PLUGIN_EXPORT int PLUGIN_CALL Load(void **ppData)
 {
 	pAMXFunctions = ppData[PLUGIN_DATA_AMX_EXPORTS];
 	sampprintf = (samp_printf)ppData[PLUGIN_DATA_LOGPRINTF];
+	if (InitEventPool() == -1)
+	{
+		sampprintf("['Event Pool'ERR] 'Init'");
+	}
 	return OnLoadPlugin();
 }
 

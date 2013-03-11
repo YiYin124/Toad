@@ -8,10 +8,29 @@
 #include "samp.h"
 #include "amxsamp.h"
 
+#include "../Y_List/y_list.h"
+
+extern List *EventPool[69];
+
+static Base base;
+
+static void IterAtor(int index, Element e)
+{
+	((EVENT *)e)->func(base);
+}
+
+static int IterAtorEnd()
+{
+	return 1;
+}
+
+
 static cell AMX_NATIVE_CALL FS_OnRconCommand(AMX *amx, const cell *params)
 {
 	char text[1024];
 	_amx_GetString(amx, params[1], text, sizeof(text));
+	base.BaseRconCommand.cmd = text;
+	ListIterator(EventPool[EVENT_RCON_COMMAND], IterAtor, IterAtorEnd);
 	return OnRconCommand(text);
 }
 

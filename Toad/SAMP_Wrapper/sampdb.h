@@ -1,9 +1,10 @@
-#pragma once
 /*  SA-MP Native SQLite Database Functions
 *
 *  (c) Copyright 2007, SA-MP Team
 *
 */
+
+#pragma once
 
 // --------------------------------------------------
 // Natives
